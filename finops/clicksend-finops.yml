@@ -1,0 +1,127 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: ClickSend
+providerId: clicksend
+created: '2026-07-01'
+modified: '2026-07-01'
+reconciled: false
+tags:
+- Communications
+- SMS
+- MMS
+- Voice
+- Email
+- Post
+- Messaging
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of ClickSend spend. ClickSend bills on a prepaid, pay-as-you-go
+  basis: account credit is drawn down per SMS segment, per MMS, per voice
+  message, per email, and per physical post item (letters, postcards), with
+  per-unit rates that vary by destination country and, for post, by page count,
+  colour, and duplex. Dedicated numbers carry recurring monthly charges. Because
+  billing is prepaid, spend is naturally capped by the credit balance, and each
+  channel exposes a /price endpoint for pre-send cost estimation.
+notes: >-
+  Use the per-channel /*/price endpoints to estimate charges before sending and
+  GET /account to monitor the remaining credit balance. Per-unit rates change by
+  country; reconcile against the ClickSend pricing pages.
+sources:
+- https://www.clicksend.com/us/pricing/
+- https://developers.clicksend.com/
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: ClickSend
+serviceCategory: Communications
+billingModel:
+  pricingCategory: Usage-Based
+  billingFrequency: Prepaid
+  billingCurrency: USD
+  chargeCategories:
+  - Usage
+  - Purchase
+  - Adjustment
+focusColumns:
+  ServiceName: ClickSend
+  ServiceCategory: Communications
+  ProviderName: ClickSend
+  PublisherName: ClickSend
+  InvoiceIssuerName: ClickSend
+  BillingCurrency: USD
+  ChargeCategory: Usage
+  PricingCategory: Usage-Based
+meters:
+- name: sms_segments
+  description: SMS message segments sent, billed per segment by destination country.
+  unit: messages
+  aggregation: sum
+  dimensions:
+  - account
+  - subaccount
+  - country
+- name: mms_messages
+  description: MMS messages sent, billed per message by destination country.
+  unit: messages
+  aggregation: sum
+  dimensions:
+  - account
+  - subaccount
+  - country
+- name: voice_messages
+  description: Voice / text-to-speech messages placed, billed per message by destination and duration.
+  unit: messages
+  aggregation: sum
+  dimensions:
+  - account
+  - subaccount
+  - country
+- name: emails
+  description: Transactional emails sent, billed per email.
+  unit: emails
+  aggregation: sum
+  dimensions:
+  - account
+  - subaccount
+- name: post_letters
+  description: Physical letters printed and mailed, billed per item by pages, colour, duplex, and destination.
+  unit: items
+  aggregation: sum
+  dimensions:
+  - account
+  - subaccount
+  - country
+- name: post_postcards
+  description: Physical postcards printed and mailed, billed per item by destination.
+  unit: items
+  aggregation: sum
+  dimensions:
+  - account
+  - subaccount
+  - country
+- name: dedicated_numbers
+  description: Recurring monthly charge per provisioned dedicated / inbound number.
+  unit: numbers
+  aggregation: sum
+  dimensions:
+  - account
+  - country
+principles:
+- name: Visibility
+  description: Pull usage via GET /account and /account/usage/{year}/{month}/subaccount; monitor prepaid balance.
+- name: Allocation
+  description: Use subaccounts and custom_string tags to attribute messaging spend to teams and workloads.
+- name: Optimization
+  description: Estimate cost with the /*/price endpoints before sending; batch recipients; grow prepaid balance to reach lower SMS rate tiers; retire unused dedicated numbers.
+- name: Accountability
+  description: Assign owners per subaccount and review monthly usage-by-subaccount reports against budget.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

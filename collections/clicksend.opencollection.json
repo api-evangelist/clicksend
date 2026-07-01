@@ -1,0 +1,630 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClickSend v3 API",
+    "version": "3.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{apiKey}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SMS",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send SMS messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/sms/send",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send SMS messages"
+        },
+        {
+          "info": {
+            "name": "Calculate SMS price",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/sms/price",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculate SMS price"
+        },
+        {
+          "info": {
+            "name": "Get sent SMS history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/sms/history"
+          },
+          "docs": "Get sent SMS history"
+        },
+        {
+          "info": {
+            "name": "Cancel a queued SMS",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://rest.clicksend.com/v3/sms/{message_id}/cancel"
+          },
+          "docs": "Cancel a queued SMS"
+        },
+        {
+          "info": {
+            "name": "Get SMS templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/sms/templates"
+          },
+          "docs": "Get SMS templates"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "MMS",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send MMS messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/mms/send",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send MMS messages"
+        },
+        {
+          "info": {
+            "name": "Calculate MMS price",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/mms/price",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculate MMS price"
+        },
+        {
+          "info": {
+            "name": "Get sent MMS history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/mms/history"
+          },
+          "docs": "Get sent MMS history"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Voice",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send voice (TTS) messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/voice/send",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send voice (TTS) messages"
+        },
+        {
+          "info": {
+            "name": "Calculate voice price",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/voice/price",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculate voice price"
+        },
+        {
+          "info": {
+            "name": "Get supported voice languages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/voice/lang"
+          },
+          "docs": "Get supported voice languages"
+        },
+        {
+          "info": {
+            "name": "Cancel a queued voice message",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://rest.clicksend.com/v3/voice/{message_id}/cancel"
+          },
+          "docs": "Cancel a queued voice message"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Email",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send a transactional email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/email/send",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a transactional email"
+        },
+        {
+          "info": {
+            "name": "Calculate email price",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/email/price",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculate email price"
+        },
+        {
+          "info": {
+            "name": "Get sent email history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/email/history"
+          },
+          "docs": "Get sent email history"
+        },
+        {
+          "info": {
+            "name": "Get verified from-addresses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/email/addresses"
+          },
+          "docs": "Get verified from-addresses"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Post Letter",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Print and mail letters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/post/letters/send",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Print and mail letters"
+        },
+        {
+          "info": {
+            "name": "Calculate letter price",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/post/letters/price",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculate letter price"
+        },
+        {
+          "info": {
+            "name": "Get letter history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/post/letters/history"
+          },
+          "docs": "Get letter history"
+        },
+        {
+          "info": {
+            "name": "Detect address on a letter PDF",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/post/letters/detect-address",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Detect address on a letter PDF"
+        },
+        {
+          "info": {
+            "name": "Upload a media file (PDF/image)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/uploads",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload a media file (PDF/image)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Post Postcard",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Print and mail postcards",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/post/postcards/send",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Print and mail postcards"
+        },
+        {
+          "info": {
+            "name": "Calculate postcard price",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/post/postcards/price",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculate postcard price"
+        },
+        {
+          "info": {
+            "name": "Get postcard history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/post/postcards/history"
+          },
+          "docs": "Get postcard history"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Contacts & Lists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get contact lists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/lists"
+          },
+          "docs": "Get contact lists"
+        },
+        {
+          "info": {
+            "name": "Create a contact list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/lists",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a contact list"
+        },
+        {
+          "info": {
+            "name": "Get contacts in a list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/lists/{list_id}/contacts"
+          },
+          "docs": "Get contacts in a list"
+        },
+        {
+          "info": {
+            "name": "Create a contact in a list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/lists/{list_id}/contacts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a contact in a list"
+        },
+        {
+          "info": {
+            "name": "Import contacts into a list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/lists/{list_id}/import",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Import contacts into a list"
+        },
+        {
+          "info": {
+            "name": "Search contacts and lists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/search/contacts-lists"
+          },
+          "docs": "Search contacts and lists"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Delivery Receipts & Inbound",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get SMS delivery receipts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/sms/receipts"
+          },
+          "docs": "Get SMS delivery receipts"
+        },
+        {
+          "info": {
+            "name": "Mark SMS receipts as read",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://rest.clicksend.com/v3/sms/receipts-read",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Mark SMS receipts as read"
+        },
+        {
+          "info": {
+            "name": "Get inbound SMS",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/sms/inbound"
+          },
+          "docs": "Get inbound SMS"
+        },
+        {
+          "info": {
+            "name": "Get voice delivery receipts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/voice/receipts"
+          },
+          "docs": "Get voice delivery receipts"
+        },
+        {
+          "info": {
+            "name": "Get MMS delivery receipts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/mms/receipts"
+          },
+          "docs": "Get MMS delivery receipts"
+        },
+        {
+          "info": {
+            "name": "Get inbound-SMS automations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/automations/sms/inbound"
+          },
+          "docs": "Get inbound-SMS automations"
+        },
+        {
+          "info": {
+            "name": "Create inbound-SMS automation (webhook)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/automations/sms/inbound",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create inbound-SMS automation (webhook)"
+        },
+        {
+          "info": {
+            "name": "Get receipt automations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/automations/sms/receipts"
+          },
+          "docs": "Get receipt automations"
+        },
+        {
+          "info": {
+            "name": "Create receipt automation (webhook)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/automations/sms/receipts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create receipt automation (webhook)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Account & Balance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get account details and balance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/account"
+          },
+          "docs": "Get account details and balance"
+        },
+        {
+          "info": {
+            "name": "Get usage by subaccount",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/account/usage/{year}/{month}/subaccount"
+          },
+          "docs": "Get usage by subaccount"
+        },
+        {
+          "info": {
+            "name": "Get subaccounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/subaccounts"
+          },
+          "docs": "Get subaccounts"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+aid: clicksend
+url: https://raw.githubusercontent.com/api-evangelist/clicksend/refs/heads/main/apis.yml
+name: ClickSend
+kind: company
+description: ClickSend is a cloud communications company providing a single REST API
+  for business messaging across SMS, MMS, voice / text-to-speech, transactional email,
+  and physical post - letters and postcards printed and mailed globally. The v3 API
+  (rest.clicksend.com/v3) uses HTTP Basic authentication with a username and API key
+  and covers sending, delivery receipts, inbound handling, contacts and lists, and
+  account balance.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Communications
+- SMS
+- MMS
+- Voice
+- Email
+- Post
+- Messaging
+- CPaaS
+created: '2026-07-01'
+modified: '2026-07-01'
+specificationVersion: '0.19'
+apis:
+- aid: clicksend:clicksend-sms-api
+  name: ClickSend SMS API
+  tags:
+  - SMS
+  - Messaging
+  - Text
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.clicksend.com/docs/messaging/sms
+  baseURL: https://rest.clicksend.com/v3
+  properties:
+  - url: https://developers.clicksend.com/docs/messaging/sms
+    type: Documentation
+  - url: https://developers.clicksend.com/docs/rest/v3/
+    type: APIReference
+  - url: openapi/clicksend-openapi.yml
+    type: OpenAPI
+  - url: collections/clicksend.postman_collection.json
+    type: PostmanCollection
+  - url: collections/clicksend.opencollection.json
+    type: OpenCollection
+  description: Send single or bulk SMS worldwide, price a message before sending,
+    view outbound history, cancel queued messages, and manage reusable SMS templates
+    via POST /sms/send, /sms/price, /sms/history, /sms/{message_id}/cancel and
+    /sms/templates.
+- aid: clicksend:clicksend-mms-api
+  name: ClickSend MMS API
+  tags:
+  - MMS
+  - Multimedia
+  - Messaging
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.clicksend.com/docs/messaging/mms
+  baseURL: https://rest.clicksend.com/v3
+  properties:
+  - url: https://developers.clicksend.com/docs/messaging/mms
+    type: Documentation
+  - url: openapi/clicksend-openapi.yml
+    type: OpenAPI
+  - url: collections/clicksend.postman_collection.json
+    type: PostmanCollection
+  - url: collections/clicksend.opencollection.json
+    type: OpenCollection
+  description: Send multimedia messages with an image or media file and subject line,
+    price MMS, and pull MMS history via POST /mms/send, /mms/price and
+    GET /mms/history. Media is referenced from an uploaded file URL.
+- aid: clicksend:clicksend-voice-api
+  name: ClickSend Voice / Text-to-Speech API
+  tags:
+  - Voice
+  - Text to Speech
+  - TTS
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.clicksend.com/docs/messaging/voice-messaging
+  baseURL: https://rest.clicksend.com/v3
+  properties:
+  - url: https://developers.clicksend.com/docs/messaging/voice-messaging
+    type: Documentation
+  - url: openapi/clicksend-openapi.yml
+    type: OpenAPI
+  - url: collections/clicksend.postman_collection.json
+    type: PostmanCollection
+  - url: collections/clicksend.opencollection.json
+    type: OpenCollection
+  description: Place automated voice calls that read text aloud via text-to-speech
+    in a chosen language and voice, price the call, list supported languages, and
+    cancel calls via POST /voice/send, /voice/price, GET /voice/lang and
+    /voice/{message_id}/cancel.
+- aid: clicksend:clicksend-email-api
+  name: ClickSend Transactional Email API
+  tags:
+  - Email
+  - Transactional
+  - Messaging
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.clicksend.com/docs/messaging/email
+  baseURL: https://rest.clicksend.com/v3
+  properties:
+  - url: https://developers.clicksend.com/docs/messaging/email
+    type: Documentation
+  - url: openapi/clicksend-openapi.yml
+    type: OpenAPI
+  - url: collections/clicksend.postman_collection.json
+    type: PostmanCollection
+  - url: collections/clicksend.opencollection.json
+    type: OpenCollection
+  description: Send transactional email from verified sender addresses, price and
+    view email history, and manage verified from-addresses via POST /email/send,
+    /email/price, GET /email/history and /email/addresses.
+- aid: clicksend:clicksend-post-letters-api
+  name: ClickSend Post - Letters API
+  tags:
+  - Post
+  - Letters
+  - Direct Mail
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.clicksend.com/docs/post/letters
+  baseURL: https://rest.clicksend.com/v3
+  properties:
+  - url: https://developers.clicksend.com/docs/post/letters
+    type: Documentation
+  - url: openapi/clicksend-openapi.yml
+    type: OpenAPI
+  - url: collections/clicksend.postman_collection.json
+    type: PostmanCollection
+  - url: collections/clicksend.opencollection.json
+    type: OpenCollection
+  description: Print and physically mail letters worldwide from an uploaded PDF,
+    price a letter, validate a delivery address, and view history via
+    POST /post/letters/send, /post/letters/price, /post/letters/detect-address and
+    GET /post/letters/history.
+- aid: clicksend:clicksend-post-postcards-api
+  name: ClickSend Post - Postcards API
+  tags:
+  - Post
+  - Postcards
+  - Direct Mail
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.clicksend.com/docs/post/postcards
+  baseURL: https://rest.clicksend.com/v3
+  properties:
+  - url: https://developers.clicksend.com/docs/post/postcards
+    type: Documentation
+  - url: openapi/clicksend-openapi.yml
+    type: OpenAPI
+  - url: collections/clicksend.postman_collection.json
+    type: PostmanCollection
+  - url: collections/clicksend.opencollection.json
+    type: OpenCollection
+  description: Print and mail postcards worldwide from an uploaded PDF design,
+    price a postcard, and view postcard history via POST /post/postcards/send,
+    /post/postcards/price and GET /post/postcards/history.
+- aid: clicksend:clicksend-contacts-lists-api
+  name: ClickSend Contacts & Lists API
+  tags:
+  - Contacts
+  - Lists
+  - Address Book
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.clicksend.com/docs/contacts
+  baseURL: https://rest.clicksend.com/v3
+  properties:
+  - url: https://developers.clicksend.com/docs/contacts
+    type: Documentation
+  - url: openapi/clicksend-openapi.yml
+    type: OpenAPI
+  - url: collections/clicksend.postman_collection.json
+    type: PostmanCollection
+  - url: collections/clicksend.opencollection.json
+    type: OpenCollection
+  description: Create and manage contact lists and the contacts within them, import
+    contacts, remove duplicates, transfer and copy contacts between lists, and search
+    across lists via /lists, /lists/{list_id}/contacts, /lists/{list_id}/import and
+    /search/contacts-lists.
+- aid: clicksend:clicksend-delivery-receipts-api
+  name: ClickSend Delivery Receipts & Inbound API
+  tags:
+  - Delivery Receipts
+  - Webhooks
+  - Inbound
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.clicksend.com/docs/messaging/sms/receive-sms
+  baseURL: https://rest.clicksend.com/v3
+  properties:
+  - url: https://developers.clicksend.com/docs/messaging/sms/receive-sms
+    type: Documentation
+  - url: openapi/clicksend-openapi.yml
+    type: OpenAPI
+  - url: collections/clicksend.postman_collection.json
+    type: PostmanCollection
+  - url: collections/clicksend.opencollection.json
+    type: OpenCollection
+  description: Retrieve delivery receipts and inbound messages for SMS, MMS, voice
+    and email, mark receipts and inbound messages as read, and configure automation
+    rules that forward receipts and inbound messages to your webhook URLs via
+    /sms/receipts, /sms/inbound, /voice/receipts, /mms/receipts and /automations/*.
+- aid: clicksend:clicksend-account-balance-api
+  name: ClickSend Account & Balance API
+  tags:
+  - Account
+  - Balance
+  - Billing
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.clicksend.com/docs/account
+  baseURL: https://rest.clicksend.com/v3
+  properties:
+  - url: https://developers.clicksend.com/docs/account
+    type: Documentation
+  - url: openapi/clicksend-openapi.yml
+    type: OpenAPI
+  - url: collections/clicksend.postman_collection.json
+    type: PostmanCollection
+  - url: collections/clicksend.opencollection.json
+    type: OpenCollection
+  description: Retrieve account details including the current credit balance, view
+    usage by month, manage subaccounts, and recharge account credit via GET /account,
+    /account/usage/{year}/{month}/subaccount, /subaccounts and /recharge/*.
+common:
+- type: GitHubOrganization
+  url: https://github.com/ClickSend
+- type: LinkedIn
+  url: https://www.linkedin.com/company/clicksend
+- type: Website
+  url: https://www.clicksend.com/
+- type: Documentation
+  url: https://developers.clicksend.com/
+- type: Plans
+  url: plans/clicksend-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/clicksend-rate-limits.yml
+- type: FinOps
+  url: finops/clicksend-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

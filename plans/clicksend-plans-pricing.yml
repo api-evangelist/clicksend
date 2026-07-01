@@ -1,0 +1,167 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: ClickSend
+providerId: clicksend
+created: '2026-07-01'
+modified: '2026-07-01'
+reconciled: false
+tags:
+- Communications
+- SMS
+- MMS
+- Voice
+- Email
+- Post
+- Messaging
+- Plans
+description: >-
+  ClickSend uses a pay-as-you-go, prepaid-credit model. There is no monthly
+  subscription for standard messaging: customers top up account credit and are
+  charged per message (SMS / MMS), per minute or message (voice), per email, and
+  per physical item (letters, postcards). Per-unit rates vary by destination
+  country and, for post, by page count, colour, and duplex options; higher
+  prepaid balances unlock lower per-message SMS pricing tiers. Rates below are
+  representative and vary by country - always confirm current pricing on the
+  ClickSend pricing pages and via the /*/price endpoints before sending.
+notes: >-
+  ClickSend exposes a price-check endpoint for each channel (/sms/price,
+  /mms/price, /voice/price, /email/price, /post/letters/price,
+  /post/postcards/price) that returns the exact charge for a given payload,
+  which is the authoritative source of truth over any published table.
+sources:
+- https://www.clicksend.com/us/pricing/
+- https://developers.clicksend.com/
+plans:
+- id: clicksend-pay-as-you-go
+  name: Pay-as-you-go (Prepaid Credit)
+  type: usage
+  description: >-
+    Prepaid account credit is drawn down per message and per physical item.
+    No monthly minimum or subscription for standard messaging.
+  entries:
+  - label: SMS (per message segment, US)
+    name: sms
+    type: usage
+    metric: messages
+    limit: -1
+    timeFrame: month
+    geo: US
+    unit: 1
+    price: from ~$0.0243 per SMS segment; destination- and volume-dependent
+    userMultiplied: false
+  - label: MMS (per message, US)
+    name: mms
+    type: usage
+    metric: messages
+    limit: -1
+    timeFrame: month
+    geo: US
+    unit: 1
+    price: from ~$0.15 per MMS; destination-dependent
+    userMultiplied: false
+  - label: Voice / Text-to-Speech (per message)
+    name: voice
+    type: usage
+    metric: messages
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: from ~$0.049 per voice message; destination- and duration-dependent
+    userMultiplied: false
+  - label: Transactional Email
+    name: email
+    type: usage
+    metric: emails
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: from ~$0.001 per email; free allowance may apply
+    userMultiplied: false
+  - label: Post - Letter (per item)
+    name: post_letter
+    type: usage
+    metric: items
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: from ~$1.15 per letter; varies by pages, colour, duplex, destination
+    userMultiplied: false
+  - label: Post - Postcard (per item)
+    name: post_postcard
+    type: usage
+    metric: items
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: from ~$1.28 per postcard; varies by destination
+    userMultiplied: false
+  - label: Inbound / Dedicated Number
+    name: dedicated_number
+    type: usage
+    metric: numbers
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: from ~$5-$10 per number per month; country-dependent
+    userMultiplied: false
+  elements:
+  - name: SMS
+  - name: MMS
+  - name: Voice
+  - name: Email
+  - name: Post Letters
+  - name: Post Postcards
+  - name: Contacts and Lists
+  - name: Delivery Receipts and Inbound
+- id: clicksend-volume
+  name: Volume / Committed Pricing
+  type: usage
+  description: >-
+    Higher prepaid balances and committed volumes unlock lower per-message SMS
+    rate tiers automatically, with custom rates available for high-volume
+    senders on request.
+  entries:
+  - label: Volume SMS Tier
+    name: volume_sms
+    type: usage
+    metric: messages
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: reduced per-message rate at higher prepaid balances
+    userMultiplied: false
+  elements:
+  - name: Tiered SMS Pricing
+- id: clicksend-enterprise
+  name: Enterprise
+  type: enterprise
+  description: >-
+    Custom volume rates, dedicated numbers and sender IDs, subaccounts,
+    reseller arrangements, SLAs, and account management. Contact ClickSend
+    sales.
+  entries:
+  - label: Enterprise Agreement
+    name: enterprise
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Custom Volume Pricing
+  - name: Subaccounts
+  - name: Reseller Accounts
+  - name: Dedicated Numbers
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

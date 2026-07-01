@@ -1,0 +1,98 @@
+aid: clicksend
+name: ClickSend
+review:
+  question: Does ClickSend expose a documented public WebSocket or event-streaming API?
+  answer: false
+  date: '2026-07-01'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    ClickSend's real-time/event surface is HTTP webhook callbacks (delivery
+    receipts and inbound messages POSTed to a customer-supplied URL, configured
+    via the /automations/* endpoints), not a WebSocket or Server-Sent Events
+    stream that the client consumes. No AsyncAPI document was authored because
+    there is no client-consumed streaming channel to model; the event flow is
+    an outbound provider-to-consumer HTTP callback, which is fully described by
+    the REST configuration endpoints already in the OpenAPI document.
+findings:
+  summary: |
+    ClickSend does not publish a documented public WebSocket API. The ClickSend
+    v3 platform is a REST (HTTPS) API under https://rest.clicksend.com/v3 using
+    HTTP Basic authentication (account username + API key). Asynchronous events -
+    SMS/MMS/voice/email delivery receipts and inbound SMS - are delivered as
+    outbound HTTP webhook callbacks to a URL the customer registers through the
+    /automations/* endpoints, and can also be polled through the /*/receipts and
+    /sms/inbound REST endpoints. No realtime, bidirectional WebSocket (ws:// or
+    wss://) endpoint is documented.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://rest.clicksend.com/v3
+      documented: true
+    - protocol: Webhook
+      scheme: https
+      note: Outbound HTTP callbacks to a customer URL for delivery receipts and inbound messages, configured via /automations/* endpoints. Provider-to-consumer, not a client-consumed stream.
+      documented: true
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented in the ClickSend v3 API reference or product docs as of the review date.
+  authentication:
+    scheme: HTTP Basic
+    note: Username is the ClickSend account username; password is the API key from the ClickSend dashboard.
+  endpointsConfirmedRest:
+    - POST https://rest.clicksend.com/v3/sms/send
+    - POST https://rest.clicksend.com/v3/sms/price
+    - GET  https://rest.clicksend.com/v3/sms/history
+    - PUT  https://rest.clicksend.com/v3/sms/{message_id}/cancel
+    - GET  https://rest.clicksend.com/v3/sms/receipts
+    - GET  https://rest.clicksend.com/v3/sms/inbound
+    - POST https://rest.clicksend.com/v3/mms/send
+    - POST https://rest.clicksend.com/v3/mms/price
+    - GET  https://rest.clicksend.com/v3/mms/history
+    - POST https://rest.clicksend.com/v3/voice/send
+    - POST https://rest.clicksend.com/v3/voice/price
+    - GET  https://rest.clicksend.com/v3/voice/lang
+    - POST https://rest.clicksend.com/v3/email/send
+    - GET  https://rest.clicksend.com/v3/email/history
+    - GET  https://rest.clicksend.com/v3/email/addresses
+    - POST https://rest.clicksend.com/v3/post/letters/send
+    - POST https://rest.clicksend.com/v3/post/letters/price
+    - GET  https://rest.clicksend.com/v3/post/letters/history
+    - POST https://rest.clicksend.com/v3/post/letters/detect-address
+    - POST https://rest.clicksend.com/v3/post/postcards/send
+    - POST https://rest.clicksend.com/v3/post/postcards/price
+    - GET  https://rest.clicksend.com/v3/post/postcards/history
+    - POST https://rest.clicksend.com/v3/uploads
+    - GET  https://rest.clicksend.com/v3/lists
+    - POST https://rest.clicksend.com/v3/lists
+    - GET  https://rest.clicksend.com/v3/lists/{list_id}/contacts
+    - POST https://rest.clicksend.com/v3/lists/{list_id}/contacts
+    - POST https://rest.clicksend.com/v3/lists/{list_id}/import
+    - GET  https://rest.clicksend.com/v3/search/contacts-lists
+    - GET  https://rest.clicksend.com/v3/automations/sms/inbound
+    - POST https://rest.clicksend.com/v3/automations/sms/inbound
+    - GET  https://rest.clicksend.com/v3/automations/sms/receipts
+    - POST https://rest.clicksend.com/v3/automations/sms/receipts
+    - GET  https://rest.clicksend.com/v3/account
+    - GET  https://rest.clicksend.com/v3/account/usage/{year}/{month}/subaccount
+    - GET  https://rest.clicksend.com/v3/subaccounts
+sources:
+  - url: https://developers.clicksend.com/
+    type: Documentation
+    note: Developer hub; v3 REST API over HTTPS with HTTP Basic auth.
+  - url: https://developers.clicksend.com/docs/rest/v3/
+    type: APIReference
+    note: Full v3 endpoint reference; all documented endpoints are HTTPS REST.
+  - url: https://github.com/ClickSend/clicksend-go/blob/master/api/swagger.yaml
+    type: OpenAPI
+    note: Official Swagger 2.0 spec (host rest.clicksend.com, basePath /v3) used to confirm the real endpoint surface.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket or client-consumed streaming surface exists. The asynchronous
+    event surface is outbound HTTP webhook callbacks configured through REST
+    /automations/* endpoints, which are captured in the OpenAPI document and the
+    Delivery Receipts & Inbound API entry in apis.yml. No AsyncAPI document was
+    authored.

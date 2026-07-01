@@ -1,0 +1,68 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: ClickSend
+providerId: clicksend
+created: '2026-07-01'
+modified: '2026-07-01'
+reconciled: false
+tags:
+- Communications
+- SMS
+- MMS
+- Voice
+- Email
+- Post
+- Messaging
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  The ClickSend v3 API applies per-account request throttling to protect the
+  platform. Callers should send messages in batches (the send endpoints accept
+  a collection of messages in a single request) rather than issuing one HTTP
+  request per recipient. Effective throughput is also governed by account credit
+  balance, sender/number provisioning, and destination carrier limits rather
+  than a single published requests-per-second figure. Specific numeric limits
+  are not published as fixed values and are not reconciled in this artifact.
+notes: >-
+  Prefer batched sends via the messages[] collection on /sms/send, /mms/send,
+  and /voice/send to stay within request throttles. Confirm any account-specific
+  limits with ClickSend support during reconciliation.
+sources:
+- https://developers.clicksend.com/
+- https://developers.clicksend.com/docs/rest/v3/
+responseCodes:
+  throttled: 429
+limits:
+- name: API Requests
+  scope: account
+  metric: requests
+  limit: see provider documentation
+  notes: >-
+    Per-account request throttling; batch recipients into a single send call
+    rather than one request per message.
+- name: Batch Size per Send
+  scope: request
+  metric: messages
+  limit: see provider documentation
+  notes: >-
+    The send endpoints accept a messages[] collection; large batches are the
+    intended path for bulk delivery.
+- name: Carrier / Destination Throughput
+  scope: destination
+  metric: messages
+  limit: carrier-dependent
+  notes: >-
+    Downstream SMS/MMS/voice throughput is subject to destination carrier and
+    number-type limits.
+policies:
+- name: Batching
+  description: Send multiple recipients per request via the messages[] array to reduce request count.
+- name: Backoff Strategy
+  description: On HTTP 429, implement exponential backoff with jitter and retry.
+- name: Prepaid Balance
+  description: Sending stops when account credit is exhausted; monitor balance via GET /account.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
