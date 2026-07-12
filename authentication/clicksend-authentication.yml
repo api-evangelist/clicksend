@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/clicksend-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: HTTP Basic authentication using your ClickSend username and API key. The username
+    is your ClickSend account username; the password is your API key from the ClickSend dashboard.
+  sources:
+  - openapi/clicksend-openapi.yml

@@ -1,0 +1,21 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://trust.sinch.com:443/?product=clicksend
+url: https://trust.sinch.com:443/?product=clicksend
+certifications:
+- SOC 2
+- ISO 27001
+- PCI DSS
+- HIPAA
+- GDPR
+evidence:
+- source: https://trust.sinch.com:443/?product=clicksend
+  keywords:
+  - soc 2
+  - soc2
+  - iso 27001
+  - pci dss
+  - hipaa
+  - trust center
+  - gdpr

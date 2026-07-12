@@ -219,6 +219,12 @@ apis:
     usage by month, manage subaccounts, and recharge account credit via GET /account,
     /account/usage/{year}/{month}/subaccount, /subaccounts and /recharge/*.
 common:
+- type: TrustCenter
+  url: security/clicksend-trust-center.yml
+- type: DomainSecurity
+  url: security/clicksend-domain-security.yml
+- type: Authentication
+  url: authentication/clicksend-authentication.yml
 - type: GitHubOrganization
   url: https://github.com/ClickSend
 - type: LinkedIn
@@ -233,6 +239,8 @@ common:
   url: rate-limits/clicksend-rate-limits.yml
 - type: FinOps
   url: finops/clicksend-finops.yml
+- url: https://blog.clicksend.com/
+  type: Blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
