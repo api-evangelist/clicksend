@@ -219,6 +219,8 @@ apis:
     usage by month, manage subaccounts, and recharge account credit via GET /account,
     /account/usage/{year}/{month}/subaccount, /subaccounts and /recharge/*.
 common:
+- type: AgenticAccess
+  url: agentic-access/clicksend-agentic-access.yml
 - type: TrustCenter
   url: security/clicksend-trust-center.yml
 - type: DomainSecurity
