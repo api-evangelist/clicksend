@@ -1,0 +1,128 @@
+openapi: 3.0.3
+info:
+  title: ClickSend v3 Account Contact API
+  description: Representative OpenAPI 3.x description of the ClickSend v3 REST API, a single cloud communications API for SMS, MMS, voice / text-to-speech, transactional email, and physical post (letters and postcards), plus contacts and lists, delivery receipts, inbound handling, and account/balance. All requests use HTTP Basic authentication with your ClickSend username and API key. This document models a representative subset of the documented endpoints; see the official reference for the complete surface.
+  termsOfService: https://www.clicksend.com/au/legal/terms-of-service/
+  contact:
+    name: ClickSend Support
+    email: support@clicksend.com
+    url: https://developers.clicksend.com/
+  version: '3.1'
+servers:
+- url: https://rest.clicksend.com/v3
+  description: ClickSend v3 production API
+security:
+- basicAuth: []
+tags:
+- name: Contact
+  description: Manage contacts.
+paths:
+  /lists/{list_id}/contacts:
+    get:
+      tags:
+      - Contact
+      operationId: listContactsGet
+      summary: Get a paginated list of contacts within a list.
+      parameters:
+      - name: list_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/limit'
+      responses:
+        '200':
+          description: A paginated list of contacts.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+    post:
+      tags:
+      - Contact
+      operationId: listContactsPost
+      summary: Create a new contact within a list.
+      parameters:
+      - name: list_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Contact'
+      responses:
+        '200':
+          description: Contact created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+components:
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 10
+      description: Number of results per page.
+    page:
+      name: page
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 1
+      description: Page number for paginated results.
+  schemas:
+    Contact:
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+        phone_number:
+          type: string
+        fax_number:
+          type: string
+        organization_name:
+          type: string
+        address_line_1:
+          type: string
+        address_city:
+          type: string
+        address_state:
+          type: string
+        address_postal_code:
+          type: string
+        address_country:
+          type: string
+        custom_1:
+          type: string
+    ApiResponse:
+      type: object
+      properties:
+        http_code:
+          type: integer
+          example: 200
+        response_code:
+          type: string
+          example: SUCCESS
+        response_msg:
+          type: string
+        data:
+          type: object
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication using your ClickSend username and API key. The username is your ClickSend account username; the password is your API key from the ClickSend dashboard.

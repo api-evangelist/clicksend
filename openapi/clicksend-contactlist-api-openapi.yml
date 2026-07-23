@@ -1,0 +1,150 @@
+openapi: 3.0.3
+info:
+  title: ClickSend v3 Account ContactList API
+  description: Representative OpenAPI 3.x description of the ClickSend v3 REST API, a single cloud communications API for SMS, MMS, voice / text-to-speech, transactional email, and physical post (letters and postcards), plus contacts and lists, delivery receipts, inbound handling, and account/balance. All requests use HTTP Basic authentication with your ClickSend username and API key. This document models a representative subset of the documented endpoints; see the official reference for the complete surface.
+  termsOfService: https://www.clicksend.com/au/legal/terms-of-service/
+  contact:
+    name: ClickSend Support
+    email: support@clicksend.com
+    url: https://developers.clicksend.com/
+  version: '3.1'
+servers:
+- url: https://rest.clicksend.com/v3
+  description: ClickSend v3 production API
+security:
+- basicAuth: []
+tags:
+- name: ContactList
+  description: Manage contact lists.
+paths:
+  /lists:
+    get:
+      tags:
+      - ContactList
+      operationId: listsGet
+      summary: Get a paginated list of contact lists.
+      parameters:
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/limit'
+      responses:
+        '200':
+          description: A paginated list of contact lists.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+    post:
+      tags:
+      - ContactList
+      operationId: listsPost
+      summary: Create a new contact list.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactList'
+      responses:
+        '200':
+          description: Contact list created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /lists/{list_id}/import:
+    post:
+      tags:
+      - ContactList
+      operationId: listImportPost
+      summary: Import contacts into a list from an uploaded file.
+      parameters:
+      - name: list_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                file_url:
+                  type: string
+                field_order:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Contacts imported.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /search/contacts-lists:
+    get:
+      tags:
+      - ContactList
+      operationId: searchContactsLists
+      summary: Search across contacts and lists.
+      parameters:
+      - name: q
+        in: query
+        required: true
+        schema:
+          type: string
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/limit'
+      responses:
+        '200':
+          description: Search results.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+components:
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 10
+      description: Number of results per page.
+    page:
+      name: page
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 1
+      description: Page number for paginated results.
+  schemas:
+    ApiResponse:
+      type: object
+      properties:
+        http_code:
+          type: integer
+          example: 200
+        response_code:
+          type: string
+          example: SUCCESS
+        response_msg:
+          type: string
+        data:
+          type: object
+    ContactList:
+      type: object
+      properties:
+        list_name:
+          type: string
+      required:
+      - list_name
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication using your ClickSend username and API key. The username is your ClickSend account username; the password is your API key from the ClickSend dashboard.

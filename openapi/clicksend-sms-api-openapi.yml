@@ -1,0 +1,179 @@
+openapi: 3.0.3
+info:
+  title: ClickSend v3 Account SMS API
+  description: Representative OpenAPI 3.x description of the ClickSend v3 REST API, a single cloud communications API for SMS, MMS, voice / text-to-speech, transactional email, and physical post (letters and postcards), plus contacts and lists, delivery receipts, inbound handling, and account/balance. All requests use HTTP Basic authentication with your ClickSend username and API key. This document models a representative subset of the documented endpoints; see the official reference for the complete surface.
+  termsOfService: https://www.clicksend.com/au/legal/terms-of-service/
+  contact:
+    name: ClickSend Support
+    email: support@clicksend.com
+    url: https://developers.clicksend.com/
+  version: '3.1'
+servers:
+- url: https://rest.clicksend.com/v3
+  description: ClickSend v3 production API
+security:
+- basicAuth: []
+tags:
+- name: SMS
+  description: Send and view SMS messages.
+paths:
+  /sms/send:
+    post:
+      tags:
+      - SMS
+      operationId: smsSendPost
+      summary: Send one or more SMS messages.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SmsMessageCollection'
+      responses:
+        '200':
+          description: Messages queued.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /sms/price:
+    post:
+      tags:
+      - SMS
+      operationId: smsPricePost
+      summary: Calculate the total price for one or more SMS messages before sending.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SmsMessageCollection'
+      responses:
+        '200':
+          description: Price calculated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /sms/history:
+    get:
+      tags:
+      - SMS
+      operationId: smsHistoryGet
+      summary: Get a paginated list of sent SMS messages.
+      parameters:
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/limit'
+      responses:
+        '200':
+          description: A paginated list of SMS messages.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /sms/{message_id}/cancel:
+    put:
+      tags:
+      - SMS
+      operationId: smsCancelPut
+      summary: Cancel a queued SMS message that has not yet been sent.
+      parameters:
+      - name: message_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Message cancelled.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /sms/templates:
+    get:
+      tags:
+      - SMS
+      operationId: smsTemplatesGet
+      summary: Get a list of saved SMS templates.
+      responses:
+        '200':
+          description: A list of SMS templates.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+components:
+  parameters:
+    page:
+      name: page
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 1
+      description: Page number for paginated results.
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 10
+      description: Number of results per page.
+  schemas:
+    SmsMessage:
+      type: object
+      properties:
+        source:
+          type: string
+          description: Source of the message (e.g., php, sdk).
+          default: sdk
+        from:
+          type: string
+          description: Sender ID or dedicated number.
+        body:
+          type: string
+          description: Message body.
+        to:
+          type: string
+          description: Recipient number in E.164 format.
+        schedule:
+          type: integer
+          description: Unix timestamp to schedule delivery.
+        custom_string:
+          type: string
+        country:
+          type: string
+        list_id:
+          type: integer
+      required:
+      - body
+      - to
+    ApiResponse:
+      type: object
+      properties:
+        http_code:
+          type: integer
+          example: 200
+        response_code:
+          type: string
+          example: SUCCESS
+        response_msg:
+          type: string
+        data:
+          type: object
+    SmsMessageCollection:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/SmsMessage'
+      required:
+      - messages
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication using your ClickSend username and API key. The username is your ClickSend account username; the password is your API key from the ClickSend dashboard.
