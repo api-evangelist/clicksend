@@ -1,0 +1,32 @@
+{
+  "provider": "clicksend",
+  "sources": [
+    "clicksend-account-api-openapi.yml",
+    "clicksend-contact-api-openapi.yml",
+    "clicksend-contactlist-api-openapi.yml",
+    "clicksend-email-api-openapi.yml",
+    "clicksend-mms-api-openapi.yml",
+    "clicksend-post-letter-api-openapi.yml",
+    "clicksend-post-postcard-api-openapi.yml",
+    "clicksend-receipts-api-openapi.yml",
+    "clicksend-sms-api-openapi.yml",
+    "clicksend-voice-api-openapi.yml"
+  ],
+  "outputs": [
+    "clicksend-account-api-openapi.yml",
+    "clicksend-contact-api-openapi.yml",
+    "clicksend-contactlist-api-openapi.yml",
+    "clicksend-email-api-openapi.yml",
+    "clicksend-mms-api-openapi.yml",
+    "clicksend-post-letter-api-openapi.yml",
+    "clicksend-post-postcard-api-openapi.yml",
+    "clicksend-receipts-api-openapi.yml",
+    "clicksend-sms-api-openapi.yml",
+    "clicksend-voice-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
