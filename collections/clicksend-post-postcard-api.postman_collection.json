@@ -1,0 +1,346 @@
+{
+  "item": [
+    {
+      "id": "e4a7618b-f4e2-4480-9468-e8fb0d8f7b4c",
+      "name": "Post Postcard",
+      "description": {
+        "content": "Print and mail physical postcards.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9de835ec-8f9c-470e-8656-630435a91d37",
+          "name": "Print and mail one or more postcards from an uploaded PDF.",
+          "request": {
+            "name": "Print and mail one or more postcards from an uploaded PDF.",
+            "description": {},
+            "url": {
+              "path": [
+                "post",
+                "postcards",
+                "send"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"file_url\": \"<string>\",\n  \"recipients\": [\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    },\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d4310de7-591c-40f6-85c4-36521bf2c218",
+              "name": "Postcards queued for print and mail.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "post",
+                    "postcards",
+                    "send"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"file_url\": \"<string>\",\n  \"recipients\": [\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    },\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ee071b20-3610-411c-b6c4-d8151ccdcdfd",
+          "name": "Calculate the price of a postcard before sending.",
+          "request": {
+            "name": "Calculate the price of a postcard before sending.",
+            "description": {},
+            "url": {
+              "path": [
+                "post",
+                "postcards",
+                "price"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"file_url\": \"<string>\",\n  \"recipients\": [\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    },\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5d9d23ae-3e54-4c74-b490-64a8ee125c41",
+              "name": "Price calculated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "post",
+                    "postcards",
+                    "price"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"file_url\": \"<string>\",\n  \"recipients\": [\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    },\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36d56b51-c79a-4d26-a56b-a4d7a2d65298",
+          "name": "Get a paginated list of sent postcards.",
+          "request": {
+            "name": "Get a paginated list of sent postcards.",
+            "description": {},
+            "url": {
+              "path": [
+                "post",
+                "postcards",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for paginated results."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Number of results per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1c1ffa83-eec9-4924-82b6-86d1136c1cf4",
+              "name": "A paginated list of postcards.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "post",
+                    "postcards",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rest.clicksend.com/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a79249f8-b9ca-445c-afa4-ab5f3cbcccba",
+    "name": "ClickSend v3 Account Post Postcard API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative OpenAPI 3.x description of the ClickSend v3 REST API, a single cloud communications API for SMS, MMS, voice / text-to-speech, transactional email, and physical post (letters and postcards), plus contacts and lists, delivery receipts, inbound handling, and account/balance. All requests use HTTP Basic authentication with your ClickSend username and API key. This document models a representative subset of the documented endpoints; see the official reference for the complete surface.\n\nContact Support:\n Name: ClickSend Support\n Email: support@clicksend.com",
+      "type": "text/plain"
+    }
+  }
+}

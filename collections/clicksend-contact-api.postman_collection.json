@@ -1,0 +1,278 @@
+{
+  "item": [
+    {
+      "id": "2d901696-380b-4e6c-8463-01ec716d1f87",
+      "name": "Contact",
+      "description": {
+        "content": "Manage contacts.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4a076bb1-0a52-4905-aedd-e03ae73b2438",
+          "name": "Get a paginated list of contacts within a list.",
+          "request": {
+            "name": "Get a paginated list of contacts within a list.",
+            "description": {},
+            "url": {
+              "path": [
+                "lists",
+                ":list_id",
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for paginated results."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Number of results per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "list_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6ce34d57-1984-4ffc-b405-2fc19258c9a7",
+              "name": "A paginated list of contacts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lists",
+                    ":list_id",
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "list_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ec8de141-0944-4241-845d-721ada7e7c76",
+          "name": "Create a new contact within a list.",
+          "request": {
+            "name": "Create a new contact within a list.",
+            "description": {},
+            "url": {
+              "path": [
+                "lists",
+                ":list_id",
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "list_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone_number\": \"<string>\",\n  \"fax_number\": \"<string>\",\n  \"organization_name\": \"<string>\",\n  \"address_line_1\": \"<string>\",\n  \"address_city\": \"<string>\",\n  \"address_state\": \"<string>\",\n  \"address_postal_code\": \"<string>\",\n  \"address_country\": \"<string>\",\n  \"custom_1\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f9739177-fc8f-4482-9ac9-cff62f10b8b8",
+              "name": "Contact created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lists",
+                    ":list_id",
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "list_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone_number\": \"<string>\",\n  \"fax_number\": \"<string>\",\n  \"organization_name\": \"<string>\",\n  \"address_line_1\": \"<string>\",\n  \"address_city\": \"<string>\",\n  \"address_state\": \"<string>\",\n  \"address_postal_code\": \"<string>\",\n  \"address_country\": \"<string>\",\n  \"custom_1\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rest.clicksend.com/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bddbb943-15e4-44cf-9914-9556bb76e759",
+    "name": "ClickSend v3 Account Contact API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative OpenAPI 3.x description of the ClickSend v3 REST API, a single cloud communications API for SMS, MMS, voice / text-to-speech, transactional email, and physical post (letters and postcards), plus contacts and lists, delivery receipts, inbound handling, and account/balance. All requests use HTTP Basic authentication with your ClickSend username and API key. This document models a representative subset of the documented endpoints; see the official reference for the complete surface.\n\nContact Support:\n Name: ClickSend Support\n Email: support@clicksend.com",
+      "type": "text/plain"
+    }
+  }
+}

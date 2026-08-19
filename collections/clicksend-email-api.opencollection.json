@@ -1,0 +1,91 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClickSend v3 Account Email API",
+    "version": "3.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Email",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send a transactional email from a verified sender address.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/email/send",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a transactional email from a verified sender address."
+        },
+        {
+          "info": {
+            "name": "Calculate the price of an email before sending.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/email/price",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculate the price of an email before sending."
+        },
+        {
+          "info": {
+            "name": "Get a paginated list of sent emails.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/email/history",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              }
+            ]
+          },
+          "docs": "Get a paginated list of sent emails."
+        },
+        {
+          "info": {
+            "name": "Get a list of verified email from-addresses.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/email/addresses"
+          },
+          "docs": "Get a list of verified email from-addresses."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

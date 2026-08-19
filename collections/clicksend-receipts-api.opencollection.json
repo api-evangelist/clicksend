@@ -1,0 +1,192 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClickSend v3 Account Receipts API",
+    "version": "3.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Receipts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a paginated list of SMS delivery receipts.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/sms/receipts",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              }
+            ]
+          },
+          "docs": "Get a paginated list of SMS delivery receipts."
+        },
+        {
+          "info": {
+            "name": "Mark SMS delivery receipts as read.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://rest.clicksend.com/v3/sms/receipts-read",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Mark SMS delivery receipts as read."
+        },
+        {
+          "info": {
+            "name": "Get a paginated list of inbound SMS messages.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/sms/inbound",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              }
+            ]
+          },
+          "docs": "Get a paginated list of inbound SMS messages."
+        },
+        {
+          "info": {
+            "name": "Get a paginated list of voice delivery receipts.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/voice/receipts",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              }
+            ]
+          },
+          "docs": "Get a paginated list of voice delivery receipts."
+        },
+        {
+          "info": {
+            "name": "Get a paginated list of MMS delivery receipts.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/mms/receipts",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              }
+            ]
+          },
+          "docs": "Get a paginated list of MMS delivery receipts."
+        },
+        {
+          "info": {
+            "name": "Get the configured SMS delivery-receipt automation (webhook) rules.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/automations/sms/receipts"
+          },
+          "docs": "Get the configured SMS delivery-receipt automation (webhook) rules."
+        },
+        {
+          "info": {
+            "name": "Create an SMS delivery-receipt automation that forwards receipts to a webhook URL.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/automations/sms/receipts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an SMS delivery-receipt automation that forwards receipts to a webhook URL."
+        },
+        {
+          "info": {
+            "name": "Get the configured inbound-SMS automation (webhook) rules.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/automations/sms/inbound"
+          },
+          "docs": "Get the configured inbound-SMS automation (webhook) rules."
+        },
+        {
+          "info": {
+            "name": "Create an inbound-SMS automation that forwards inbound messages to a webhook URL.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/automations/sms/inbound",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an inbound-SMS automation that forwards inbound messages to a webhook URL."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

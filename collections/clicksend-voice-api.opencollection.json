@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClickSend v3 Account Voice API",
+    "version": "3.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Voice",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send one or more voice (text-to-speech) messages.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/voice/send",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send one or more voice (text-to-speech) messages."
+        },
+        {
+          "info": {
+            "name": "Calculate the total price for one or more voice messages before sending.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/voice/price",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculate the total price for one or more voice messages before sending."
+        },
+        {
+          "info": {
+            "name": "Get a list of supported voice languages and voices.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/voice/lang"
+          },
+          "docs": "Get a list of supported voice languages and voices."
+        },
+        {
+          "info": {
+            "name": "Cancel a queued voice message.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://rest.clicksend.com/v3/voice/:message_id/cancel",
+            "params": [
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a queued voice message."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

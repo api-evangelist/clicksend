@@ -1,0 +1,512 @@
+{
+  "item": [
+    {
+      "id": "21e3a1e8-2ba2-4d02-a7fc-eb373b48ca68",
+      "name": "SMS",
+      "description": {
+        "content": "Send and view SMS messages.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "321ef788-fb92-46b5-9885-4664d8cd7185",
+          "name": "Send one or more SMS messages.",
+          "request": {
+            "name": "Send one or more SMS messages.",
+            "description": {},
+            "url": {
+              "path": [
+                "sms",
+                "send"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"list_id\": \"<integer>\"\n    },\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"list_id\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e64d42f2-51c4-4b40-b2fd-611a82322efa",
+              "name": "Messages queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sms",
+                    "send"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"list_id\": \"<integer>\"\n    },\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"list_id\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f58612f-0199-426f-a99d-9746860efc0f",
+          "name": "Calculate the total price for one or more SMS messages before sending.",
+          "request": {
+            "name": "Calculate the total price for one or more SMS messages before sending.",
+            "description": {},
+            "url": {
+              "path": [
+                "sms",
+                "price"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"list_id\": \"<integer>\"\n    },\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"list_id\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "36694aea-2194-4f32-8f92-5b7bb99a197c",
+              "name": "Price calculated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sms",
+                    "price"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"list_id\": \"<integer>\"\n    },\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"list_id\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a5f0301-871a-41d3-bafd-a0bad1144c9a",
+          "name": "Get a paginated list of sent SMS messages.",
+          "request": {
+            "name": "Get a paginated list of sent SMS messages.",
+            "description": {},
+            "url": {
+              "path": [
+                "sms",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for paginated results."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Number of results per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7a4e6f66-4458-4cbf-be3a-d3ddcda0788e",
+              "name": "A paginated list of SMS messages.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sms",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9009541f-10f0-4c0d-9a7c-e7bf8ee6b668",
+          "name": "Cancel a queued SMS message that has not yet been sent.",
+          "request": {
+            "name": "Cancel a queued SMS message that has not yet been sent.",
+            "description": {},
+            "url": {
+              "path": [
+                "sms",
+                ":message_id",
+                "cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "message_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "edc1a4c3-3042-4b6d-b714-5035761c1bb8",
+              "name": "Message cancelled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sms",
+                    ":message_id",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "message_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "45e1f91b-64b3-4a0c-871c-cabef8c001b9",
+          "name": "Get a list of saved SMS templates.",
+          "request": {
+            "name": "Get a list of saved SMS templates.",
+            "description": {},
+            "url": {
+              "path": [
+                "sms",
+                "templates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8d99d747-b101-4007-b138-6d35914cda3a",
+              "name": "A list of SMS templates.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sms",
+                    "templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rest.clicksend.com/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "673e077f-120b-4095-9b39-52b4e4522180",
+    "name": "ClickSend v3 Account SMS API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative OpenAPI 3.x description of the ClickSend v3 REST API, a single cloud communications API for SMS, MMS, voice / text-to-speech, transactional email, and physical post (letters and postcards), plus contacts and lists, delivery receipts, inbound handling, and account/balance. All requests use HTTP Basic authentication with your ClickSend username and API key. This document models a representative subset of the documented endpoints; see the official reference for the complete surface.\n\nContact Support:\n Name: ClickSend Support\n Email: support@clicksend.com",
+      "type": "text/plain"
+    }
+  }
+}

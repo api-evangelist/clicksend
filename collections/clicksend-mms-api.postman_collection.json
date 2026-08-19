@@ -1,0 +1,340 @@
+{
+  "item": [
+    {
+      "id": "f7d450a3-25e9-432a-a31e-550dce2c4626",
+      "name": "MMS",
+      "description": {
+        "content": "Send and view MMS messages.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "97ac6832-4d43-4f66-94af-6c89df1cc026",
+          "name": "Send one or more MMS messages with a media file and subject.",
+          "request": {
+            "name": "Send one or more MMS messages with a media file and subject.",
+            "description": {},
+            "url": {
+              "path": [
+                "mms",
+                "send"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    {\n      \"to\": \"<string>\",\n      \"subject\": \"<string>\",\n      \"media_file\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"body\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"to\": \"<string>\",\n      \"subject\": \"<string>\",\n      \"media_file\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"body\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"media_file\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7d332452-966e-4cff-a83f-eab8a8bc6be9",
+              "name": "MMS queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mms",
+                    "send"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"to\": \"<string>\",\n      \"subject\": \"<string>\",\n      \"media_file\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"body\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"to\": \"<string>\",\n      \"subject\": \"<string>\",\n      \"media_file\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"body\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"media_file\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "50321c74-59d1-4b68-9aa3-876af7698364",
+          "name": "Calculate the total price for one or more MMS messages before sending.",
+          "request": {
+            "name": "Calculate the total price for one or more MMS messages before sending.",
+            "description": {},
+            "url": {
+              "path": [
+                "mms",
+                "price"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    {\n      \"to\": \"<string>\",\n      \"subject\": \"<string>\",\n      \"media_file\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"body\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"to\": \"<string>\",\n      \"subject\": \"<string>\",\n      \"media_file\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"body\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"media_file\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ee9d4733-0d64-4fa1-81d0-16f550ac56af",
+              "name": "Price calculated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mms",
+                    "price"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"to\": \"<string>\",\n      \"subject\": \"<string>\",\n      \"media_file\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"body\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"to\": \"<string>\",\n      \"subject\": \"<string>\",\n      \"media_file\": \"<string>\",\n      \"source\": \"sdk\",\n      \"from\": \"<string>\",\n      \"body\": \"<string>\",\n      \"schedule\": \"<integer>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"media_file\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "13a4b11c-5d48-4dd7-951a-85599898c156",
+          "name": "Get a paginated list of sent MMS messages.",
+          "request": {
+            "name": "Get a paginated list of sent MMS messages.",
+            "description": {},
+            "url": {
+              "path": [
+                "mms",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for paginated results."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Number of results per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4ab58408-8e9f-4c77-9d7c-dd02ea5468db",
+              "name": "A paginated list of MMS messages.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mms",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rest.clicksend.com/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0354bf1e-95fe-40ce-b671-28280743536f",
+    "name": "ClickSend v3 Account MMS API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative OpenAPI 3.x description of the ClickSend v3 REST API, a single cloud communications API for SMS, MMS, voice / text-to-speech, transactional email, and physical post (letters and postcards), plus contacts and lists, delivery receipts, inbound handling, and account/balance. All requests use HTTP Basic authentication with your ClickSend username and API key. This document models a representative subset of the documented endpoints; see the official reference for the complete surface.\n\nContact Support:\n Name: ClickSend Support\n Email: support@clicksend.com",
+      "type": "text/plain"
+    }
+  }
+}

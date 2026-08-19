@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClickSend v3 Account API",
+    "version": "3.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get account details, including the current credit balance.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/account"
+          },
+          "docs": "Get account details, including the current credit balance."
+        },
+        {
+          "info": {
+            "name": "Get account usage broken down by subaccount for a given month.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/account/usage/:year/:month/subaccount",
+            "params": [
+              {
+                "name": "year",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "month",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get account usage broken down by subaccount for a given month."
+        },
+        {
+          "info": {
+            "name": "Get a paginated list of subaccounts.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/subaccounts",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              }
+            ]
+          },
+          "docs": "Get a paginated list of subaccounts."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

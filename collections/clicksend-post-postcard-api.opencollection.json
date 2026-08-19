@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClickSend v3 Account Post Postcard API",
+    "version": "3.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Post Postcard",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Print and mail one or more postcards from an uploaded PDF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/post/postcards/send",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Print and mail one or more postcards from an uploaded PDF."
+        },
+        {
+          "info": {
+            "name": "Calculate the price of a postcard before sending.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/post/postcards/price",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculate the price of a postcard before sending."
+        },
+        {
+          "info": {
+            "name": "Get a paginated list of sent postcards.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/post/postcards/history",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              }
+            ]
+          },
+          "docs": "Get a paginated list of sent postcards."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,413 @@
+{
+  "item": [
+    {
+      "id": "6b0d9a3e-13d7-4c1f-8f3f-9fd85904938a",
+      "name": "Voice",
+      "description": {
+        "content": "Send and view voice (text-to-speech) messages.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f5178f9e-3c2b-48f8-8603-ca1dbdb138d6",
+          "name": "Send one or more voice (text-to-speech) messages.",
+          "request": {
+            "name": "Send one or more voice (text-to-speech) messages.",
+            "description": {},
+            "url": {
+              "path": [
+                "voice",
+                "send"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"lang\": \"<string>\",\n      \"voice\": \"<string>\",\n      \"source\": \"sdk\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"machine_detection\": \"<integer>\",\n      \"require_input\": \"<integer>\"\n    },\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"lang\": \"<string>\",\n      \"voice\": \"<string>\",\n      \"source\": \"sdk\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"machine_detection\": \"<integer>\",\n      \"require_input\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "585aa6e9-3c37-41eb-b053-8b45486db64e",
+              "name": "Voice messages queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice",
+                    "send"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"lang\": \"<string>\",\n      \"voice\": \"<string>\",\n      \"source\": \"sdk\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"machine_detection\": \"<integer>\",\n      \"require_input\": \"<integer>\"\n    },\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"lang\": \"<string>\",\n      \"voice\": \"<string>\",\n      \"source\": \"sdk\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"machine_detection\": \"<integer>\",\n      \"require_input\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6587a35f-a9f0-465d-ae1b-940b5bcc54f8",
+          "name": "Calculate the total price for one or more voice messages before sending.",
+          "request": {
+            "name": "Calculate the total price for one or more voice messages before sending.",
+            "description": {},
+            "url": {
+              "path": [
+                "voice",
+                "price"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"lang\": \"<string>\",\n      \"voice\": \"<string>\",\n      \"source\": \"sdk\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"machine_detection\": \"<integer>\",\n      \"require_input\": \"<integer>\"\n    },\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"lang\": \"<string>\",\n      \"voice\": \"<string>\",\n      \"source\": \"sdk\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"machine_detection\": \"<integer>\",\n      \"require_input\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3c61c03c-a6bc-4dd4-b1b8-8101c7616557",
+              "name": "Price calculated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice",
+                    "price"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"lang\": \"<string>\",\n      \"voice\": \"<string>\",\n      \"source\": \"sdk\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"machine_detection\": \"<integer>\",\n      \"require_input\": \"<integer>\"\n    },\n    {\n      \"body\": \"<string>\",\n      \"to\": \"<string>\",\n      \"lang\": \"<string>\",\n      \"voice\": \"<string>\",\n      \"source\": \"sdk\",\n      \"schedule\": \"<integer>\",\n      \"custom_string\": \"<string>\",\n      \"country\": \"<string>\",\n      \"machine_detection\": \"<integer>\",\n      \"require_input\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "933532a7-aba7-484f-82e4-94c3d22c7b72",
+          "name": "Get a list of supported voice languages and voices.",
+          "request": {
+            "name": "Get a list of supported voice languages and voices.",
+            "description": {},
+            "url": {
+              "path": [
+                "voice",
+                "lang"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f6f08eb4-3774-4d2e-8172-47c118aed54b",
+              "name": "A list of supported languages.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice",
+                    "lang"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "14f68d41-2214-4694-9ae8-ccb81d977d03",
+          "name": "Cancel a queued voice message.",
+          "request": {
+            "name": "Cancel a queued voice message.",
+            "description": {},
+            "url": {
+              "path": [
+                "voice",
+                ":message_id",
+                "cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "message_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "53f3c047-f90c-42ce-afd4-20535ca5e592",
+              "name": "Voice message cancelled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voice",
+                    ":message_id",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "message_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rest.clicksend.com/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bb9a2fed-10b2-4b0e-bd56-9f47e0991565",
+    "name": "ClickSend v3 Account Voice API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative OpenAPI 3.x description of the ClickSend v3 REST API, a single cloud communications API for SMS, MMS, voice / text-to-speech, transactional email, and physical post (letters and postcards), plus contacts and lists, delivery receipts, inbound handling, and account/balance. All requests use HTTP Basic authentication with your ClickSend username and API key. This document models a representative subset of the documented endpoints; see the official reference for the complete surface.\n\nContact Support:\n Name: ClickSend Support\n Email: support@clicksend.com",
+      "type": "text/plain"
+    }
+  }
+}

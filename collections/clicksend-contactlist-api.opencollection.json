@@ -1,0 +1,117 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClickSend v3 Account ContactList API",
+    "version": "3.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ContactList",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a paginated list of contact lists.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/lists",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              }
+            ]
+          },
+          "docs": "Get a paginated list of contact lists."
+        },
+        {
+          "info": {
+            "name": "Create a new contact list.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/lists",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new contact list."
+        },
+        {
+          "info": {
+            "name": "Import contacts into a list from an uploaded file.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/lists/:list_id/import",
+            "params": [
+              {
+                "name": "list_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Import contacts into a list from an uploaded file."
+        },
+        {
+          "info": {
+            "name": "Search across contacts and lists.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/search/contacts-lists",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              }
+            ]
+          },
+          "docs": "Search across contacts and lists."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,117 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClickSend v3 Account Post Letter API",
+    "version": "3.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Post Letter",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Print and mail one or more letters from an uploaded PDF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/post/letters/send",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Print and mail one or more letters from an uploaded PDF."
+        },
+        {
+          "info": {
+            "name": "Calculate the price of a letter before sending.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/post/letters/price",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculate the price of a letter before sending."
+        },
+        {
+          "info": {
+            "name": "Get a paginated list of sent letters.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/post/letters/history",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              }
+            ]
+          },
+          "docs": "Get a paginated list of sent letters."
+        },
+        {
+          "info": {
+            "name": "Detect and validate a delivery address on an uploaded letter PDF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/post/letters/detect-address",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Detect and validate a delivery address on an uploaded letter PDF."
+        },
+        {
+          "info": {
+            "name": "Upload a media file (PDF, image) to reference in post, MMS, or campaigns.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/uploads",
+            "params": [
+              {
+                "name": "convert",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload a media file (PDF, image) to reference in post, MMS, or campaigns."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

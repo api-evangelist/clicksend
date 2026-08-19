@@ -1,0 +1,554 @@
+{
+  "item": [
+    {
+      "id": "5fea758a-a73b-4e16-985a-529ab0890017",
+      "name": "Post Letter",
+      "description": {
+        "content": "Print and mail physical letters.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fab778c3-7ebc-4983-a238-4e39d87d410d",
+          "name": "Print and mail one or more letters from an uploaded PDF.",
+          "request": {
+            "name": "Print and mail one or more letters from an uploaded PDF.",
+            "description": {},
+            "url": {
+              "path": [
+                "post",
+                "letters",
+                "send"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"file_url\": \"<string>\",\n  \"recipients\": [\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    },\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    }\n  ],\n  \"template_used\": \"<integer>\",\n  \"colour\": \"<integer>\",\n  \"duplex\": \"<integer>\",\n  \"priority_post\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "91c47d64-6dc9-48c8-9921-1f7439cc586d",
+              "name": "Letters queued for print and mail.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "post",
+                    "letters",
+                    "send"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"file_url\": \"<string>\",\n  \"recipients\": [\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    },\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    }\n  ],\n  \"template_used\": \"<integer>\",\n  \"colour\": \"<integer>\",\n  \"duplex\": \"<integer>\",\n  \"priority_post\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f75b76ad-71e6-4157-b572-b9a4eb8d3ac2",
+          "name": "Calculate the price of a letter before sending.",
+          "request": {
+            "name": "Calculate the price of a letter before sending.",
+            "description": {},
+            "url": {
+              "path": [
+                "post",
+                "letters",
+                "price"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"file_url\": \"<string>\",\n  \"recipients\": [\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    },\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    }\n  ],\n  \"template_used\": \"<integer>\",\n  \"colour\": \"<integer>\",\n  \"duplex\": \"<integer>\",\n  \"priority_post\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f1f0341b-3b60-4b38-bac0-d2a062671884",
+              "name": "Price calculated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "post",
+                    "letters",
+                    "price"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"file_url\": \"<string>\",\n  \"recipients\": [\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    },\n    {\n      \"address_name\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_city\": \"<string>\",\n      \"address_postal_code\": \"<string>\",\n      \"address_country\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"address_state\": \"<string>\",\n      \"return_address_id\": \"<integer>\",\n      \"schedule\": \"<integer>\"\n    }\n  ],\n  \"template_used\": \"<integer>\",\n  \"colour\": \"<integer>\",\n  \"duplex\": \"<integer>\",\n  \"priority_post\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bd5e4f4e-b974-4751-8898-7e1d0b17b505",
+          "name": "Get a paginated list of sent letters.",
+          "request": {
+            "name": "Get a paginated list of sent letters.",
+            "description": {},
+            "url": {
+              "path": [
+                "post",
+                "letters",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for paginated results."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Number of results per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0088f195-1539-48f4-a9ce-da978c8b918b",
+              "name": "A paginated list of letters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "post",
+                    "letters",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ae6defc6-3fc6-48c7-a29a-877e6d66f25d",
+          "name": "Detect and validate a delivery address on an uploaded letter PDF.",
+          "request": {
+            "name": "Detect and validate a delivery address on an uploaded letter PDF.",
+            "description": {},
+            "url": {
+              "path": [
+                "post",
+                "letters",
+                "detect-address"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"file_url\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c4abcdd7-4b20-4603-940b-591d1532157f",
+              "name": "Address detection result.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "post",
+                    "letters",
+                    "detect-address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"file_url\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "847ab11f-f6e6-4133-833a-34394a34f5e8",
+          "name": "Upload a media file (PDF, image) to reference in post, MMS, or campaigns.",
+          "request": {
+            "name": "Upload a media file (PDF, image) to reference in post, MMS, or campaigns.",
+            "description": {},
+            "url": {
+              "path": [
+                "uploads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "convert",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7a0c3994-1cbf-4268-8564-3480bef466e2",
+              "name": "File uploaded; returns a referenceable URL.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "uploads"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "convert",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"content\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rest.clicksend.com/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0eaf7681-1d11-4c1d-9df8-169a2afcafc8",
+    "name": "ClickSend v3 Account Post Letter API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative OpenAPI 3.x description of the ClickSend v3 REST API, a single cloud communications API for SMS, MMS, voice / text-to-speech, transactional email, and physical post (letters and postcards), plus contacts and lists, delivery receipts, inbound handling, and account/balance. All requests use HTTP Basic authentication with your ClickSend username and API key. This document models a representative subset of the documented endpoints; see the official reference for the complete surface.\n\nContact Support:\n Name: ClickSend Support\n Email: support@clicksend.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClickSend v3 Account SMS API",
+    "version": "3.1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SMS",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send one or more SMS messages.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/sms/send",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send one or more SMS messages."
+        },
+        {
+          "info": {
+            "name": "Calculate the total price for one or more SMS messages before sending.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rest.clicksend.com/v3/sms/price",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Calculate the total price for one or more SMS messages before sending."
+        },
+        {
+          "info": {
+            "name": "Get a paginated list of sent SMS messages.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/sms/history",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for paginated results."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              }
+            ]
+          },
+          "docs": "Get a paginated list of sent SMS messages."
+        },
+        {
+          "info": {
+            "name": "Cancel a queued SMS message that has not yet been sent.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://rest.clicksend.com/v3/sms/:message_id/cancel",
+            "params": [
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a queued SMS message that has not yet been sent."
+        },
+        {
+          "info": {
+            "name": "Get a list of saved SMS templates.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rest.clicksend.com/v3/sms/templates"
+          },
+          "docs": "Get a list of saved SMS templates."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

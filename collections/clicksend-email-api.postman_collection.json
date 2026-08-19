@@ -1,0 +1,417 @@
+{
+  "item": [
+    {
+      "id": "afaf9b55-c03f-49fe-9c4b-78eeb24d26c5",
+      "name": "Email",
+      "description": {
+        "content": "Send and view transactional email.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "74c43e4d-94e0-4774-95d2-3e85d6000f7c",
+          "name": "Send a transactional email from a verified sender address.",
+          "request": {
+            "name": "Send a transactional email from a verified sender address.",
+            "description": {},
+            "url": {
+              "path": [
+                "email",
+                "send"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"to\": [\n    {\n      \"email\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"from\": {\n    \"email_address_id\": \"<integer>\",\n    \"name\": \"<string>\"\n  },\n  \"subject\": \"<string>\",\n  \"body\": \"<string>\",\n  \"cc\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"bcc\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"attachments\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"schedule\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "17afb0f0-3a78-4d1c-9a4a-a6445549f177",
+              "name": "Email queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "email",
+                    "send"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"to\": [\n    {\n      \"email\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"from\": {\n    \"email_address_id\": \"<integer>\",\n    \"name\": \"<string>\"\n  },\n  \"subject\": \"<string>\",\n  \"body\": \"<string>\",\n  \"cc\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"bcc\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"attachments\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"schedule\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9fd11ca9-d462-44a5-b40a-5f8529608244",
+          "name": "Calculate the price of an email before sending.",
+          "request": {
+            "name": "Calculate the price of an email before sending.",
+            "description": {},
+            "url": {
+              "path": [
+                "email",
+                "price"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"to\": [\n    {\n      \"email\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"from\": {\n    \"email_address_id\": \"<integer>\",\n    \"name\": \"<string>\"\n  },\n  \"subject\": \"<string>\",\n  \"body\": \"<string>\",\n  \"cc\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"bcc\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"attachments\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"schedule\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "249dc70d-cf28-40f6-bf83-3657739177be",
+              "name": "Price calculated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "email",
+                    "price"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"to\": [\n    {\n      \"email\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"from\": {\n    \"email_address_id\": \"<integer>\",\n    \"name\": \"<string>\"\n  },\n  \"subject\": \"<string>\",\n  \"body\": \"<string>\",\n  \"cc\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"bcc\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"attachments\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"schedule\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1f2576db-8f65-4604-af9f-720c39e140b9",
+          "name": "Get a paginated list of sent emails.",
+          "request": {
+            "name": "Get a paginated list of sent emails.",
+            "description": {},
+            "url": {
+              "path": [
+                "email",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for paginated results."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Number of results per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c4c4793d-43d6-4074-ab67-413bc6ee2ddd",
+              "name": "A paginated list of emails.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "email",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "65c28569-ba7d-4863-bf2f-175d4286e674",
+          "name": "Get a list of verified email from-addresses.",
+          "request": {
+            "name": "Get a list of verified email from-addresses.",
+            "description": {},
+            "url": {
+              "path": [
+                "email",
+                "addresses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a5d2bc0b-60a6-492d-9bc9-06b271a2186a",
+              "name": "A list of verified email addresses.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "email",
+                    "addresses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"http_code\": 200,\n  \"response_code\": \"SUCCESS\",\n  \"response_msg\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rest.clicksend.com/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "052c0f64-8d2a-4be5-baea-2f5efc6b1646",
+    "name": "ClickSend v3 Account Email API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative OpenAPI 3.x description of the ClickSend v3 REST API, a single cloud communications API for SMS, MMS, voice / text-to-speech, transactional email, and physical post (letters and postcards), plus contacts and lists, delivery receipts, inbound handling, and account/balance. All requests use HTTP Basic authentication with your ClickSend username and API key. This document models a representative subset of the documented endpoints; see the official reference for the complete surface.\n\nContact Support:\n Name: ClickSend Support\n Email: support@clicksend.com",
+      "type": "text/plain"
+    }
+  }
+}
