@@ -124,40 +124,6 @@ apis:
     url: https://developers.clicksend.com/docs/messaging/sms/receive-sms
   - type: Documentation
     url: https://developers.clicksend.com/docs/account
-- aid: clicksend:clicksend-contactlist-api
-  name: ClickSend ContactList API
-  description: Manage contact lists.
-  humanURL: https://developers.clicksend.com/docs/messaging/sms
-  baseURL: https://rest.clicksend.com/v3
-  tags:
-  - ContactList
-  properties:
-  - type: OpenAPI
-    url: openapi/clicksend-contactlist-api-openapi.yml
-  - type: Documentation
-    url: https://developers.clicksend.com/docs/messaging/sms
-  - type: APIReference
-    url: https://developers.clicksend.com/docs/rest/v3/
-  - type: PostmanCollection
-    url: collections/clicksend.postman_collection.json
-  - type: OpenCollection
-    url: collections/clicksend.opencollection.json
-  - type: Documentation
-    url: https://developers.clicksend.com/docs/messaging/mms
-  - type: Documentation
-    url: https://developers.clicksend.com/docs/messaging/voice-messaging
-  - type: Documentation
-    url: https://developers.clicksend.com/docs/messaging/email
-  - type: Documentation
-    url: https://developers.clicksend.com/docs/post/letters
-  - type: Documentation
-    url: https://developers.clicksend.com/docs/post/postcards
-  - type: Documentation
-    url: https://developers.clicksend.com/docs/contacts
-  - type: Documentation
-    url: https://developers.clicksend.com/docs/messaging/sms/receive-sms
-  - type: Documentation
-    url: https://developers.clicksend.com/docs/account
 - aid: clicksend:clicksend-email-api
   name: ClickSend Email API
   description: Send and view transactional email.
@@ -372,6 +338,40 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/clicksend-voice-api-openapi.yml
+  - type: Documentation
+    url: https://developers.clicksend.com/docs/messaging/sms
+  - type: APIReference
+    url: https://developers.clicksend.com/docs/rest/v3/
+  - type: PostmanCollection
+    url: collections/clicksend.postman_collection.json
+  - type: OpenCollection
+    url: collections/clicksend.opencollection.json
+  - type: Documentation
+    url: https://developers.clicksend.com/docs/messaging/mms
+  - type: Documentation
+    url: https://developers.clicksend.com/docs/messaging/voice-messaging
+  - type: Documentation
+    url: https://developers.clicksend.com/docs/messaging/email
+  - type: Documentation
+    url: https://developers.clicksend.com/docs/post/letters
+  - type: Documentation
+    url: https://developers.clicksend.com/docs/post/postcards
+  - type: Documentation
+    url: https://developers.clicksend.com/docs/contacts
+  - type: Documentation
+    url: https://developers.clicksend.com/docs/messaging/sms/receive-sms
+  - type: Documentation
+    url: https://developers.clicksend.com/docs/account
+- aid: clicksend:clicksend-contact-list-api
+  name: ClickSend Contact List API
+  description: Manage contact lists.
+  humanURL: https://developers.clicksend.com/docs/messaging/sms
+  baseURL: https://rest.clicksend.com/v3
+  tags:
+  - Contact List
+  properties:
+  - type: OpenAPI
+    url: openapi/clicksend-contact-list-api-openapi.yml
   - type: Documentation
     url: https://developers.clicksend.com/docs/messaging/sms
   - type: APIReference
