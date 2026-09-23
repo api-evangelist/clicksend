@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ClickSend v3 Account ContactList API
+  title: ClickSend v3 Contact List API
   description: Representative OpenAPI 3.x description of the ClickSend v3 REST API, a single cloud communications API for SMS, MMS, voice / text-to-speech, transactional email, and physical post (letters and postcards), plus contacts and lists, delivery receipts, inbound handling, and account/balance. All requests use HTTP Basic authentication with your ClickSend username and API key. This document models a representative subset of the documented endpoints; see the official reference for the complete surface.
   termsOfService: https://www.clicksend.com/au/legal/terms-of-service/
   contact:
@@ -14,15 +14,15 @@ servers:
 security:
 - basicAuth: []
 tags:
-- name: ContactList
+- name: Contact List
   description: Manage contact lists.
 paths:
   /lists:
     get:
       tags:
-      - ContactList
+      - Contact List
       operationId: listsGet
-      summary: Get a paginated list of contact lists.
+      summary: Get a paginated list of contact lists
       parameters:
       - $ref: '#/components/parameters/page'
       - $ref: '#/components/parameters/limit'
@@ -35,9 +35,9 @@ paths:
                 $ref: '#/components/schemas/ApiResponse'
     post:
       tags:
-      - ContactList
+      - Contact List
       operationId: listsPost
-      summary: Create a new contact list.
+      summary: Create a new contact list
       requestBody:
         required: true
         content:
@@ -54,9 +54,9 @@ paths:
   /lists/{list_id}/import:
     post:
       tags:
-      - ContactList
+      - Contact List
       operationId: listImportPost
-      summary: Import contacts into a list from an uploaded file.
+      summary: Import contacts into a list from an uploaded file
       parameters:
       - name: list_id
         in: path
@@ -86,9 +86,9 @@ paths:
   /search/contacts-lists:
     get:
       tags:
-      - ContactList
+      - Contact List
       operationId: searchContactsLists
-      summary: Search across contacts and lists.
+      summary: Search across contacts and lists
       parameters:
       - name: q
         in: query
@@ -123,6 +123,13 @@ components:
         default: 1
       description: Page number for paginated results.
   schemas:
+    ContactList:
+      type: object
+      properties:
+        list_name:
+          type: string
+      required:
+      - list_name
     ApiResponse:
       type: object
       properties:
@@ -136,13 +143,6 @@ components:
           type: string
         data:
           type: object
-    ContactList:
-      type: object
-      properties:
-        list_name:
-          type: string
-      required:
-      - list_name
   securitySchemes:
     basicAuth:
       type: http

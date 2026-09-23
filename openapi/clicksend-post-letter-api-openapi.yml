@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ClickSend v3 Account Post Letter API
+  title: ClickSend v3 Post Letter API
   description: Representative OpenAPI 3.x description of the ClickSend v3 REST API, a single cloud communications API for SMS, MMS, voice / text-to-speech, transactional email, and physical post (letters and postcards), plus contacts and lists, delivery receipts, inbound handling, and account/balance. All requests use HTTP Basic authentication with your ClickSend username and API key. This document models a representative subset of the documented endpoints; see the official reference for the complete surface.
   termsOfService: https://www.clicksend.com/au/legal/terms-of-service/
   contact:
@@ -22,7 +22,7 @@ paths:
       tags:
       - Post Letter
       operationId: postLettersSendPost
-      summary: Print and mail one or more letters from an uploaded PDF.
+      summary: Print and mail one or more letters from an uploaded PDF
       requestBody:
         required: true
         content:
@@ -41,7 +41,7 @@ paths:
       tags:
       - Post Letter
       operationId: postLettersPricePost
-      summary: Calculate the price of a letter before sending.
+      summary: Calculate the price of a letter before sending
       requestBody:
         required: true
         content:
@@ -60,7 +60,7 @@ paths:
       tags:
       - Post Letter
       operationId: postLettersHistoryGet
-      summary: Get a paginated list of sent letters.
+      summary: Get a paginated list of sent letters
       parameters:
       - $ref: '#/components/parameters/page'
       - $ref: '#/components/parameters/limit'
@@ -76,7 +76,7 @@ paths:
       tags:
       - Post Letter
       operationId: postLettersDetectAddressPost
-      summary: Detect and validate a delivery address on an uploaded letter PDF.
+      summary: Detect and validate a delivery address on an uploaded letter PDF
       requestBody:
         required: true
         content:
@@ -98,7 +98,7 @@ paths:
       tags:
       - Post Letter
       operationId: uploadsPost
-      summary: Upload a media file (PDF, image) to reference in post, MMS, or campaigns.
+      summary: Upload a media file (PDF, image) to reference in post, MMS, or campaigns
       parameters:
       - name: convert
         in: query
@@ -124,14 +124,6 @@ paths:
                 $ref: '#/components/schemas/ApiResponse'
 components:
   parameters:
-    page:
-      name: page
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 1
-      description: Page number for paginated results.
     limit:
       name: limit
       in: query
@@ -140,7 +132,23 @@ components:
         type: integer
         default: 10
       description: Number of results per page.
+    page:
+      name: page
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 1
+      description: Page number for paginated results.
   schemas:
+    Upload:
+      type: object
+      properties:
+        content:
+          type: string
+          description: Base64-encoded or hosted file content reference.
+      required:
+      - content
     ApiResponse:
       type: object
       properties:
@@ -177,14 +185,6 @@ components:
       required:
       - file_url
       - recipients
-    Upload:
-      type: object
-      properties:
-        content:
-          type: string
-          description: Base64-encoded or hosted file content reference.
-      required:
-      - content
     PostRecipient:
       type: object
       properties:

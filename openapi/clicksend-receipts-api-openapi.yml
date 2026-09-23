@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ClickSend v3 Account Receipts API
+  title: ClickSend v3 Receipts API
   description: Representative OpenAPI 3.x description of the ClickSend v3 REST API, a single cloud communications API for SMS, MMS, voice / text-to-speech, transactional email, and physical post (letters and postcards), plus contacts and lists, delivery receipts, inbound handling, and account/balance. All requests use HTTP Basic authentication with your ClickSend username and API key. This document models a representative subset of the documented endpoints; see the official reference for the complete surface.
   termsOfService: https://www.clicksend.com/au/legal/terms-of-service/
   contact:
@@ -22,7 +22,7 @@ paths:
       tags:
       - Receipts
       operationId: smsReceiptsGet
-      summary: Get a paginated list of SMS delivery receipts.
+      summary: Get a paginated list of SMS delivery receipts
       parameters:
       - $ref: '#/components/parameters/page'
       - $ref: '#/components/parameters/limit'
@@ -38,7 +38,7 @@ paths:
       tags:
       - Receipts
       operationId: smsReceiptsReadPut
-      summary: Mark SMS delivery receipts as read.
+      summary: Mark SMS delivery receipts as read
       requestBody:
         required: false
         content:
@@ -60,7 +60,7 @@ paths:
       tags:
       - Receipts
       operationId: smsInboundGet
-      summary: Get a paginated list of inbound SMS messages.
+      summary: Get a paginated list of inbound SMS messages
       parameters:
       - $ref: '#/components/parameters/page'
       - $ref: '#/components/parameters/limit'
@@ -76,7 +76,7 @@ paths:
       tags:
       - Receipts
       operationId: voiceReceiptsGet
-      summary: Get a paginated list of voice delivery receipts.
+      summary: Get a paginated list of voice delivery receipts
       parameters:
       - $ref: '#/components/parameters/page'
       - $ref: '#/components/parameters/limit'
@@ -92,7 +92,7 @@ paths:
       tags:
       - Receipts
       operationId: mmsReceiptsGet
-      summary: Get a paginated list of MMS delivery receipts.
+      summary: Get a paginated list of MMS delivery receipts
       parameters:
       - $ref: '#/components/parameters/page'
       - $ref: '#/components/parameters/limit'
@@ -108,7 +108,7 @@ paths:
       tags:
       - Receipts
       operationId: automationsSmsReceiptsGet
-      summary: Get the configured SMS delivery-receipt automation (webhook) rules.
+      summary: Get the configured SMS delivery-receipt automation (webhook) rules
       responses:
         '200':
           description: A list of receipt automation rules.
@@ -120,7 +120,7 @@ paths:
       tags:
       - Receipts
       operationId: automationsSmsReceiptsPost
-      summary: Create an SMS delivery-receipt automation that forwards receipts to a webhook URL.
+      summary: Create an SMS delivery-receipt automation that forwards receipts to a webhook…
       requestBody:
         required: true
         content:
@@ -139,7 +139,7 @@ paths:
       tags:
       - Receipts
       operationId: automationsSmsInboundGet
-      summary: Get the configured inbound-SMS automation (webhook) rules.
+      summary: Get the configured inbound-SMS automation (webhook) rules
       responses:
         '200':
           description: A list of inbound automation rules.
@@ -151,7 +151,7 @@ paths:
       tags:
       - Receipts
       operationId: automationsSmsInboundPost
-      summary: Create an inbound-SMS automation that forwards inbound messages to a webhook URL.
+      summary: Create an inbound-SMS automation that forwards inbound messages to a webhook URL
       requestBody:
         required: true
         content:
