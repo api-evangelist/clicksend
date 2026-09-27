@@ -104,33 +104,20 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
 components:
-  parameters:
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 10
-      description: Number of results per page.
-    page:
-      name: page
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 1
-      description: Page number for paginated results.
   schemas:
-    SmsMessageCollection:
+    ApiResponse:
       type: object
       properties:
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/SmsMessage'
-      required:
-      - messages
+        http_code:
+          type: integer
+          example: 200
+        response_code:
+          type: string
+          example: SUCCESS
+        response_msg:
+          type: string
+        data:
+          type: object
     SmsMessage:
       type: object
       properties:
@@ -159,19 +146,32 @@ components:
       required:
       - body
       - to
-    ApiResponse:
+    SmsMessageCollection:
       type: object
       properties:
-        http_code:
-          type: integer
-          example: 200
-        response_code:
-          type: string
-          example: SUCCESS
-        response_msg:
-          type: string
-        data:
-          type: object
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/SmsMessage'
+      required:
+      - messages
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 10
+      description: Number of results per page.
+    page:
+      name: page
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 1
+      description: Page number for paginated results.
   securitySchemes:
     basicAuth:
       type: http

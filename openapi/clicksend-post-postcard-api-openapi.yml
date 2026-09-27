@@ -72,37 +72,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
 components:
-  parameters:
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 10
-      description: Number of results per page.
-    page:
-      name: page
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 1
-      description: Page number for paginated results.
   schemas:
-    PostPostcard:
-      type: object
-      properties:
-        file_url:
-          type: string
-          description: URL of the uploaded PDF design to print and mail.
-        recipients:
-          type: array
-          items:
-            $ref: '#/components/schemas/PostRecipient'
-      required:
-      - file_url
-      - recipients
     ApiResponse:
       type: object
       properties:
@@ -143,6 +113,36 @@ components:
       - address_city
       - address_postal_code
       - address_country
+    PostPostcard:
+      type: object
+      properties:
+        file_url:
+          type: string
+          description: URL of the uploaded PDF design to print and mail.
+        recipients:
+          type: array
+          items:
+            $ref: '#/components/schemas/PostRecipient'
+      required:
+      - file_url
+      - recipients
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 10
+      description: Number of results per page.
+    page:
+      name: page
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 1
+      description: Page number for paginated results.
   securitySchemes:
     basicAuth:
       type: http

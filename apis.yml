@@ -43,6 +43,8 @@ tags:
 - Email
 - Messaging
 - CPaaS
+- Fax
+- Direct Mail
 tags_raw:
 - Communications
 - SMS
@@ -52,6 +54,8 @@ tags_raw:
 - Post
 - Messaging
 - CPaaS
+- Fax
+- Direct Mail
 created: '2026-07-01'
 modified: '2026-07-01'
 specificationVersion: '0.23'
