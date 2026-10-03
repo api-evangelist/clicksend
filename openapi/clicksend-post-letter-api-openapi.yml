@@ -123,28 +123,24 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
 components:
+  parameters:
+    page:
+      name: page
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 1
+      description: Page number for paginated results.
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 10
+      description: Number of results per page.
   schemas:
-    Upload:
-      type: object
-      properties:
-        content:
-          type: string
-          description: Base64-encoded or hosted file content reference.
-      required:
-      - content
-    ApiResponse:
-      type: object
-      properties:
-        http_code:
-          type: integer
-          example: 200
-        response_code:
-          type: string
-          example: SUCCESS
-        response_msg:
-          type: string
-        data:
-          type: object
     PostRecipient:
       type: object
       properties:
@@ -172,6 +168,14 @@ components:
       - address_city
       - address_postal_code
       - address_country
+    Upload:
+      type: object
+      properties:
+        content:
+          type: string
+          description: Base64-encoded or hosted file content reference.
+      required:
+      - content
     PostLetter:
       type: object
       properties:
@@ -195,23 +199,19 @@ components:
       required:
       - file_url
       - recipients
-  parameters:
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 10
-      description: Number of results per page.
-    page:
-      name: page
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 1
-      description: Page number for paginated results.
+    ApiResponse:
+      type: object
+      properties:
+        http_code:
+          type: integer
+          example: 200
+        response_code:
+          type: string
+          example: SUCCESS
+        response_msg:
+          type: string
+        data:
+          type: object
   securitySchemes:
     basicAuth:
       type: http

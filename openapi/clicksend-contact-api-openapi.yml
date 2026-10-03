@@ -64,14 +64,6 @@ paths:
                 $ref: '#/components/schemas/ApiResponse'
 components:
   parameters:
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 10
-      description: Number of results per page.
     page:
       name: page
       in: query
@@ -80,7 +72,28 @@ components:
         type: integer
         default: 1
       description: Page number for paginated results.
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 10
+      description: Number of results per page.
   schemas:
+    ApiResponse:
+      type: object
+      properties:
+        http_code:
+          type: integer
+          example: 200
+        response_code:
+          type: string
+          example: SUCCESS
+        response_msg:
+          type: string
+        data:
+          type: object
     Contact:
       type: object
       properties:
@@ -108,19 +121,6 @@ components:
           type: string
         custom_1:
           type: string
-    ApiResponse:
-      type: object
-      properties:
-        http_code:
-          type: integer
-          example: 200
-        response_code:
-          type: string
-          example: SUCCESS
-        response_msg:
-          type: string
-        data:
-          type: object
   securitySchemes:
     basicAuth:
       type: http

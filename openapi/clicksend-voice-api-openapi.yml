@@ -89,6 +89,15 @@ paths:
                 $ref: '#/components/schemas/ApiResponse'
 components:
   schemas:
+    VoiceMessageCollection:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/VoiceMessage'
+      required:
+      - messages
     ApiResponse:
       type: object
       properties:
@@ -136,15 +145,6 @@ components:
       - to
       - lang
       - voice
-    VoiceMessageCollection:
-      type: object
-      properties:
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/VoiceMessage'
-      required:
-      - messages
   securitySchemes:
     basicAuth:
       type: http
