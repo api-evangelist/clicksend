@@ -166,6 +166,34 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
 components:
+  schemas:
+    ApiResponse:
+      type: object
+      properties:
+        http_code:
+          type: integer
+          example: 200
+        response_code:
+          type: string
+          example: SUCCESS
+        response_msg:
+          type: string
+        data:
+          type: object
+    AutomationRule:
+      type: object
+      properties:
+        rule_name:
+          type: string
+        url:
+          type: string
+          description: Webhook URL to which events are forwarded.
+        dedicated_number:
+          type: string
+        enabled:
+          type: integer
+      required:
+      - url
   parameters:
     page:
       name: page
@@ -183,34 +211,6 @@ components:
         type: integer
         default: 10
       description: Number of results per page.
-  schemas:
-    AutomationRule:
-      type: object
-      properties:
-        rule_name:
-          type: string
-        url:
-          type: string
-          description: Webhook URL to which events are forwarded.
-        dedicated_number:
-          type: string
-        enabled:
-          type: integer
-      required:
-      - url
-    ApiResponse:
-      type: object
-      properties:
-        http_code:
-          type: integer
-          example: 200
-        response_code:
-          type: string
-          example: SUCCESS
-        response_msg:
-          type: string
-        data:
-          type: object
   securitySchemes:
     basicAuth:
       type: http

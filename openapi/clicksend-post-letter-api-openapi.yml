@@ -123,24 +123,51 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
 components:
-  parameters:
-    page:
-      name: page
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 1
-      description: Page number for paginated results.
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 10
-      description: Number of results per page.
   schemas:
+    ApiResponse:
+      type: object
+      properties:
+        http_code:
+          type: integer
+          example: 200
+        response_code:
+          type: string
+          example: SUCCESS
+        response_msg:
+          type: string
+        data:
+          type: object
+    PostLetter:
+      type: object
+      properties:
+        file_url:
+          type: string
+          description: URL of the uploaded PDF to print and mail.
+        template_used:
+          type: integer
+        colour:
+          type: integer
+          description: 1 for colour, 0 for black and white.
+        duplex:
+          type: integer
+          description: 1 for double-sided, 0 for single-sided.
+        priority_post:
+          type: integer
+        recipients:
+          type: array
+          items:
+            $ref: '#/components/schemas/PostRecipient'
+      required:
+      - file_url
+      - recipients
+    Upload:
+      type: object
+      properties:
+        content:
+          type: string
+          description: Base64-encoded or hosted file content reference.
+      required:
+      - content
     PostRecipient:
       type: object
       properties:
@@ -168,50 +195,23 @@ components:
       - address_city
       - address_postal_code
       - address_country
-    Upload:
-      type: object
-      properties:
-        content:
-          type: string
-          description: Base64-encoded or hosted file content reference.
-      required:
-      - content
-    PostLetter:
-      type: object
-      properties:
-        file_url:
-          type: string
-          description: URL of the uploaded PDF to print and mail.
-        template_used:
-          type: integer
-        colour:
-          type: integer
-          description: 1 for colour, 0 for black and white.
-        duplex:
-          type: integer
-          description: 1 for double-sided, 0 for single-sided.
-        priority_post:
-          type: integer
-        recipients:
-          type: array
-          items:
-            $ref: '#/components/schemas/PostRecipient'
-      required:
-      - file_url
-      - recipients
-    ApiResponse:
-      type: object
-      properties:
-        http_code:
-          type: integer
-          example: 200
-        response_code:
-          type: string
-          example: SUCCESS
-        response_msg:
-          type: string
-        data:
-          type: object
+  parameters:
+    page:
+      name: page
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 1
+      description: Page number for paginated results.
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 10
+      description: Number of results per page.
   securitySchemes:
     basicAuth:
       type: http
