@@ -137,6 +137,14 @@ components:
           type: string
         data:
           type: object
+    Upload:
+      type: object
+      properties:
+        content:
+          type: string
+          description: Base64-encoded or hosted file content reference.
+      required:
+      - content
     PostLetter:
       type: object
       properties:
@@ -160,14 +168,6 @@ components:
       required:
       - file_url
       - recipients
-    Upload:
-      type: object
-      properties:
-        content:
-          type: string
-          description: Base64-encoded or hosted file content reference.
-      required:
-      - content
     PostRecipient:
       type: object
       properties:
@@ -196,14 +196,6 @@ components:
       - address_postal_code
       - address_country
   parameters:
-    page:
-      name: page
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 1
-      description: Page number for paginated results.
     limit:
       name: limit
       in: query
@@ -212,6 +204,14 @@ components:
         type: integer
         default: 10
       description: Number of results per page.
+    page:
+      name: page
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 1
+      description: Page number for paginated results.
   securitySchemes:
     basicAuth:
       type: http

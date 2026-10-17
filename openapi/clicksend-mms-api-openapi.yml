@@ -72,6 +72,23 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
 components:
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 10
+      description: Number of results per page.
+    page:
+      name: page
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 1
+      description: Page number for paginated results.
   schemas:
     ApiResponse:
       type: object
@@ -86,17 +103,6 @@ components:
           type: string
         data:
           type: object
-    MmsMessageCollection:
-      type: object
-      properties:
-        media_file:
-          type: string
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/MmsMessage'
-      required:
-      - messages
     MmsMessage:
       type: object
       properties:
@@ -122,23 +128,17 @@ components:
       - to
       - subject
       - media_file
-  parameters:
-    page:
-      name: page
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 1
-      description: Page number for paginated results.
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 10
-      description: Number of results per page.
+    MmsMessageCollection:
+      type: object
+      properties:
+        media_file:
+          type: string
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/MmsMessage'
+      required:
+      - messages
   securitySchemes:
     basicAuth:
       type: http
