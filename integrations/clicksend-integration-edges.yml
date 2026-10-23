@@ -231,6 +231,23 @@ edges:
     detected: '2026-10-22'
   detected_by: sweep-openapi-directory-apis-guru.py
   first_seen: '2026-10-22'
+- partner_name: Airtable (own)
+  partner: airtable
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://airtable.com/marketplace/blkMx7V6Zmm8C8EkV/clicksend-sms
+  mirror_of: airtable/integrations/airtable-integration-edges.yml
+  apps:
+  - ClickSend SMS
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Airtable extension
 generated: '2026-10-12'
 method: searched
 checked:
@@ -245,6 +262,7 @@ checked:
 - zendesk/integrations/zendesk-integration-edges.yml
 - https://api.apis.guru/v2/list.json
 - https://api.apis.guru/v2/providers.json
+- airtable/integrations/airtable-integration-edges.yml
 source:
 - https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
 - https://registry.npmjs.org/-/v1/search?text=keywords:n8n-community-node-package
