@@ -1,4 +1,4 @@
-# ClickSend (clicksend)
+# ClickSend
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,218 +66,135 @@
 
 ClickSend is a cloud communications company providing a single REST API for business messaging across SMS, MMS, voice / text-to-speech, transactional email, and physical post - letters and postcards printed and mailed globally. The v3 API (rest.clicksend.com/v3) uses HTTP Basic authentication with a username and API key and covers sending, delivery receipts, inbound handling, contacts and lists, and account balance.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/clicksend/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/clicksend/refs/heads/main/apis.yml)
+**Areas:** Communications · SMS · MMS · Voice · Email · Messaging · CPaaS · Fax · Direct Mail
 
-## Tags
+## ClickSend on APIs.io
 
-- Communications
-- SMS
-- MMS
-- Voice
-- Email
-- Post
-- Messaging
-- CPaaS
+Everything profiled for ClickSend is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/clicksend/](https://apis.io/providers/clicksend/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (10)
 
-- **Created:** 2026-07-01
-- **Modified:** 2026-07-01
+- [ClickSend Account API](https://apis.io/apis/clicksend/clicksend-account-api/) — Account details, usage, and balance.
+- [ClickSend Contact API](https://apis.io/apis/clicksend/clicksend-contact-api/) — Manage contacts.
+- [ClickSend Email API](https://apis.io/apis/clicksend/clicksend-email-api/) — Send and view transactional email.
+- [ClickSend MMS API](https://apis.io/apis/clicksend/clicksend-mms-api/) — Send and view MMS messages.
+- [ClickSend Post Letter API](https://apis.io/apis/clicksend/clicksend-post-letter-api/) — Print and mail physical letters.
+- [ClickSend Post Postcard API](https://apis.io/apis/clicksend/clicksend-post-postcard-api/) — Print and mail physical postcards.
+- [ClickSend Receipts API](https://apis.io/apis/clicksend/clicksend-receipts-api/) — Delivery receipts, inbound messages, and automations.
+- [ClickSend SMS API](https://apis.io/apis/clicksend/clicksend-sms-api/) — Send and view SMS messages.
+- [ClickSend Voice API](https://apis.io/apis/clicksend/clicksend-voice-api/) — Send and view voice (text-to-speech) messages.
+- [ClickSend Contact List API](https://apis.io/apis/clicksend/clicksend-contact-list-api/) — Manage contact lists.
 
-## APIs
+### Published properties
 
-### ClickSend SMS API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Send single or bulk SMS worldwide, price a message before sending, view outbound history, cancel queued messages, and manage reusable SMS templates via POST /sms/send, /sms/price, /sms/history, /sms/{message_id}/cancel and /sms/templates.
+#### Agentic access (1)
 
-- **Human URL:** [https://developers.clicksend.com/docs/messaging/sms](https://developers.clicksend.com/docs/messaging/sms)
-- **Base URL:** `https://rest.clicksend.com/v3`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Clicksend Agentic Access](https://apis.io/agentic-access/clicksend/clicksend-agentic-access/)
 
-- SMS
-- Messaging
-- Text
+#### Collections (11)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://developers.clicksend.com/docs/messaging/sms)
-- [API Reference](https://developers.clicksend.com/docs/rest/v3/)
-- [OpenAPI](openapi/clicksend-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/clicksend.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/clicksend.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [ClickSend v3 API](https://apis.io/collections/clicksend/open-clicksend/)
+- [ClickSend v3 Account API](https://apis.io/collections/clicksend/open-clicksend-account-api/)
+- [ClickSend v3 Account Contact API](https://apis.io/collections/clicksend/open-clicksend-contact-api/)
+- [ClickSend v3 Account ContactList API](https://apis.io/collections/clicksend/open-clicksend-contactlist-api/)
+- [ClickSend v3 Account Email API](https://apis.io/collections/clicksend/open-clicksend-email-api/)
+- [ClickSend v3 Account MMS API](https://apis.io/collections/clicksend/open-clicksend-mms-api/)
+- [ClickSend v3 Account Post Letter API](https://apis.io/collections/clicksend/open-clicksend-post-letter-api/)
+- [ClickSend v3 Account Post Postcard API](https://apis.io/collections/clicksend/open-clicksend-post-postcard-api/)
+- [ClickSend v3 Account Receipts API](https://apis.io/collections/clicksend/open-clicksend-receipts-api/)
+- [ClickSend v3 Account SMS API](https://apis.io/collections/clicksend/open-clicksend-sms-api/)
+- [ClickSend v3 Account Voice API](https://apis.io/collections/clicksend/open-clicksend-voice-api/)
 
-### ClickSend MMS API
+#### Security (3)
 
-Send multimedia messages with an image or media file and subject line, price MMS, and pull MMS history via POST /mms/send, /mms/price and GET /mms/history. Media is referenced from an uploaded file URL.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://developers.clicksend.com/docs/messaging/mms](https://developers.clicksend.com/docs/messaging/mms)
-- **Base URL:** `https://rest.clicksend.com/v3`
+- [Clicksend Authentication](https://apis.io/security/clicksend/clicksend-authentication/)
+- [Clicksend Domain Security](https://apis.io/security/clicksend/clicksend-domain-security/)
+- [Clicksend Trust Center](https://apis.io/security/clicksend/clicksend-trust-center/)
 
-#### Tags
+#### Plans and pricing (1)
 
-- MMS
-- Multimedia
-- Messaging
+Published plans, tiers and prices.
 
-#### Properties
+- [Clicksend Plans Pricing](https://apis.io/plans/clicksend/clicksend-plans-pricing/)
 
-- [Documentation](https://developers.clicksend.com/docs/messaging/mms)
-- [OpenAPI](openapi/clicksend-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/clicksend.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/clicksend.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Rate limits (1)
 
-### ClickSend Voice / Text-to-Speech API
+Published request limits.
 
-Place automated voice calls that read text aloud via text-to-speech in a chosen language and voice, price the call, list supported languages, and cancel calls via POST /voice/send, /voice/price, GET /voice/lang and /voice/{message_id}/cancel.
+- [Clicksend Rate Limits](https://apis.io/rate-limits/clicksend/clicksend-rate-limits/)
 
-- **Human URL:** [https://developers.clicksend.com/docs/messaging/voice-messaging](https://developers.clicksend.com/docs/messaging/voice-messaging)
-- **Base URL:** `https://rest.clicksend.com/v3`
+#### FinOps (1)
 
-#### Tags
+What the API costs to run, by operation.
 
-- Voice
-- Text to Speech
-- TTS
+- [Clicksend Finops](https://apis.io/finops/clicksend/clicksend-finops/)
 
-#### Properties
+## Where to find this API
 
-- [Documentation](https://developers.clicksend.com/docs/messaging/voice-messaging)
-- [OpenAPI](openapi/clicksend-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/clicksend.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/clicksend.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### ClickSend Transactional Email API
-
-Send transactional email from verified sender addresses, price and view email history, and manage verified from-addresses via POST /email/send, /email/price, GET /email/history and /email/addresses.
-
-- **Human URL:** [https://developers.clicksend.com/docs/messaging/email](https://developers.clicksend.com/docs/messaging/email)
-- **Base URL:** `https://rest.clicksend.com/v3`
-
-#### Tags
-
-- Email
-- Transactional
-- Messaging
-
-#### Properties
-
-- [Documentation](https://developers.clicksend.com/docs/messaging/email)
-- [OpenAPI](openapi/clicksend-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/clicksend.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/clicksend.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ClickSend Post - Letters API
-
-Print and physically mail letters worldwide from an uploaded PDF, price a letter, validate a delivery address, and view history via POST /post/letters/send, /post/letters/price, /post/letters/detect-address and GET /post/letters/history.
-
-- **Human URL:** [https://developers.clicksend.com/docs/post/letters](https://developers.clicksend.com/docs/post/letters)
-- **Base URL:** `https://rest.clicksend.com/v3`
-
-#### Tags
-
-- Post
-- Letters
-- Direct Mail
-
-#### Properties
-
-- [Documentation](https://developers.clicksend.com/docs/post/letters)
-- [OpenAPI](openapi/clicksend-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/clicksend.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/clicksend.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ClickSend Post - Postcards API
-
-Print and mail postcards worldwide from an uploaded PDF design, price a postcard, and view postcard history via POST /post/postcards/send, /post/postcards/price and GET /post/postcards/history.
-
-- **Human URL:** [https://developers.clicksend.com/docs/post/postcards](https://developers.clicksend.com/docs/post/postcards)
-- **Base URL:** `https://rest.clicksend.com/v3`
-
-#### Tags
-
-- Post
-- Postcards
-- Direct Mail
-
-#### Properties
-
-- [Documentation](https://developers.clicksend.com/docs/post/postcards)
-- [OpenAPI](openapi/clicksend-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/clicksend.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/clicksend.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ClickSend Contacts & Lists API
-
-Create and manage contact lists and the contacts within them, import contacts, remove duplicates, transfer and copy contacts between lists, and search across lists via /lists, /lists/{list_id}/contacts, /lists/{list_id}/import and /search/contacts-lists.
-
-- **Human URL:** [https://developers.clicksend.com/docs/contacts](https://developers.clicksend.com/docs/contacts)
-- **Base URL:** `https://rest.clicksend.com/v3`
-
-#### Tags
-
-- Contacts
-- Lists
-- Address Book
-
-#### Properties
-
-- [Documentation](https://developers.clicksend.com/docs/contacts)
-- [OpenAPI](openapi/clicksend-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/clicksend.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/clicksend.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ClickSend Delivery Receipts & Inbound API
-
-Retrieve delivery receipts and inbound messages for SMS, MMS, voice and email, mark receipts and inbound messages as read, and configure automation rules that forward receipts and inbound messages to your webhook URLs via /sms/receipts, /sms/inbound, /voice/receipts, /mms/receipts and /automations/*.
-
-- **Human URL:** [https://developers.clicksend.com/docs/messaging/sms/receive-sms](https://developers.clicksend.com/docs/messaging/sms/receive-sms)
-- **Base URL:** `https://rest.clicksend.com/v3`
-
-#### Tags
-
-- Delivery Receipts
-- Webhooks
-- Inbound
-
-#### Properties
-
-- [Documentation](https://developers.clicksend.com/docs/messaging/sms/receive-sms)
-- [OpenAPI](openapi/clicksend-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/clicksend.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/clicksend.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ClickSend Account & Balance API
-
-Retrieve account details including the current credit balance, view usage by month, manage subaccounts, and recharge account credit via GET /account, /account/usage/{year}/{month}/subaccount, /subaccounts and /recharge/*.
-
-- **Human URL:** [https://developers.clicksend.com/docs/account](https://developers.clicksend.com/docs/account)
-- **Base URL:** `https://rest.clicksend.com/v3`
-
-#### Tags
-
-- Account
-- Balance
-- Billing
-
-#### Properties
-
-- [Documentation](https://developers.clicksend.com/docs/account)
-- [OpenAPI](openapi/clicksend-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/clicksend.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/clicksend.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/ClickSend)
-- [LinkedIn](https://www.linkedin.com/company/clicksend)
 - [Website](https://www.clicksend.com/)
 - [Documentation](https://developers.clicksend.com/)
-- [Plans](plans/clicksend-plans-pricing.yml)
-- [Rate Limits](rate-limits/clicksend-rate-limits.yml)
-- [Fin Ops](finops/clicksend-finops.yml)
+- [Blog](https://blog.clicksend.com/)
+- [GitHub](https://github.com/ClickSend)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 26.9** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 44.1 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 32.1 |
+| Access clarity | 15.8 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 14.2** — Telecommunications
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/clicksend/](https://apis.io/providers/clicksend/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for ClickSend: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/clicksend/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
